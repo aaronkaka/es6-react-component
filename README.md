@@ -1,4 +1,4 @@
-# ECMAScript 6 React Components
+# ECMAScript 6 React Component
 
 ![Image](screenshot.png?raw=true "screenshot")
 
@@ -7,7 +7,7 @@
 A proof-of-concept that evolves [commonjs-react-components](https://github.com/aaronkaka/commonjs-react-components) to 
 ES6 and new solutions for existing limitations.
 
-- Use ES6 Modules to build and share responsive UI components
+- Build and share decoupled and responsive UI components
 - Abstract away the component's implementation without leakage
 - No component API, event all interaction
 - **External styling is bundled with and scoped to the component**
@@ -66,7 +66,7 @@ Publish your component to an npm registry; set up your project with webpack, inc
     
 Then in your consuming app:
  
-    > npm i es6-react-component
+    > npm i es6-react-component --save
 
 Example javascript:
 
