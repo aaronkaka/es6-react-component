@@ -1,11 +1,12 @@
-'use strict';
+import React from 'react';
 
-var React = require('react');
+class AvatarComponent extends React.Component {
 
-module.exports = React.createClass({
-    render: function() {
-      return (
-        <img src={this.props.imgSrc} className="img-circle pull-right cardComponent" />
-      )
-    }
-});
+  render() {
+    return (
+      <img src={this.props.imgSrc} className="img-circle pull-right cardComponent" />
+    )
+  }
+}
+
+export default AvatarComponent;

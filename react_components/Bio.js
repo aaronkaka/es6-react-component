@@ -1,11 +1,12 @@
-'use strict';
+import React from 'react';
 
-var React = require('react');
+class BioComponent extends React.Component {
 
-module.exports = React.createClass({
-    render: function() {
-        return (
-          <p className="cardComponent">{this.props.text}</p>
-        )
-    }
-});
+  render() {
+    return (
+      <p className="cardComponent">{this.props.text}</p>
+    )
+  }
+}
+
+export default BioComponent;
