@@ -1,0 +1,41 @@
+{
+  "name": "es6-react-component",
+  "version": "0.0.0",
+  "description": "ES6 React component POC, with eventing as the mechanism for interaction.",
+  "main": "react_components/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "./scripts/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "./node_modules/react"
+    ]
+  },
+  "author": "Aaron Kaka <aaron.kaka@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronkaka/es6-react-component"
+  },
+  "dependencies": {
+    "react": "~0.13.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.15.4",
+    "jest-cli": "^0.4.15",
+    "jsx-loader": "^0.13.2",
+    "react-tools": "^0.13.3",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "keywords": [
+    "es6",
+    "react",
+    "component",
+    "eventing",
+    "webpack"
+  ]
+}

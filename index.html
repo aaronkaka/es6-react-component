@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CommonJS Component POC</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .no-fouc { display: none; }
+        </style>
+        <script type="text/javascript">
+            document.documentElement.className = 'no-fouc';
+        </script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body style="background-color:#e0e0e0;-webkit-font-smoothing: antialiased;">
+        <div class="container" id="eventedElement">
+         <h3 class="text-center">Evented Card Components</h3>
+         <div class="row">
+             <div id="div1" class="col-md-4 col-sm-6">
+                 Div 1
+             </div>
+             <div id="div2" class="col-md-4 col-sm-6">
+                 Div 2
+             </div>
+             <div id="div3" class="col-md-4 col-sm-6">
+                 Div 3
+             </div>
+         </div><!--/row-->
+        </div><!--/container-->
+
+        <div class="container" id="outsider">
+         <h3 class="text-center">Non-Evented Card Component</h3>
+         <div class="row">
+             <div id="div4" class="col-md-4 col-sm-6">
+                 Div 4
+             </div>
+         </div><!--/row-->
+        </div><!--/container-->
+
+        <h3 class="text-center"></h3>
+        <span class="text-center">
+            <p>This text and image are here to prove that component styling is strictly scoped to the component.</p>
+        </span>
+        <br />
+        <img src="images/avatar.png" class="img-circle" />
+
+        <script src="http://localhost:8080/webpack-dev-server.js"></script>
+        <script src="build/dev.card-component.js"></script>
+        <script src="scripts/eventing.js"></script>
+    </body>
+</html>
