@@ -1,10 +1,10 @@
 'use strict';
 
 // component styling
-require('../css/card.css');
+import styles from '../css/card.css';
 
-var React = require('react');
-var Card  = require('./Card.js');
+import React from 'react';
+import CardComponent from './Card.js';
 
 function cardstrap(containerClass) {
 
@@ -25,15 +25,14 @@ function cardstrap(containerClass) {
         console.info('Custom data: ', targetData);
 
         React.render(
-          <Card data={targetData} key={targetElement} />,
+          <CardComponent data={targetData} key={targetElement} />,
           document.getElementById(targetElement));
       });
   }
-
 }
 
 document.body.addEventListener('scriptinclude', function(e) {
   cardstrap(e.detail);
 });
 
-module.exports = cardstrap;
+export default cardstrap;

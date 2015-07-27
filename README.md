@@ -5,9 +5,9 @@
 ## Goals
 
 A proof-of-concept that evolves [commonjs-react-components](https://github.com/aaronkaka/commonjs-react-components) to 
-ES6 and new solutions for existing limitations.
+ES6, and achieves the following goals:
 
-- Build and share decoupled and responsive UI components
+- Build and share decoupled and responsive web components
 - Abstract away the component's implementation without leakage
 - No component API, event all interaction
 - **External styling is bundled with and scoped to the component**
@@ -62,7 +62,7 @@ In the consuming app, event the script include target container, as in the examp
 
 ### How do I require() it into my consuming application?
 
-Publish your component to an npm registry; set up your project with webpack, including loaders.
+Publish your component to an npm registry; set up your project with webpack, including the jsx, css, and babel loaders.
     
 Then in your consuming app:
  
@@ -70,7 +70,7 @@ Then in your consuming app:
 
 Example javascript:
 
-    var Cardstrap = require('es6-react-component');
+    import Cardstrap from 'es6-react-component';
     Cardstrap('.container');
     
 Then you must build the required bundle you've configured:
