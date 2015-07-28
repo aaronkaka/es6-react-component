@@ -73,6 +73,18 @@ Example javascript:
     import Cardstrap from 'es6-react-component';
     Cardstrap('.container');
     
-Then you must build the required bundle you've configured:
+Then build the required bundle, similar to this webpack.config.js:
 
-    > webpack
+    module.exports = {
+      entry: ['./eventing.js'],
+      output: {
+        path: './',
+        filename: 'bundle.js'
+      },
+      module: {
+        loaders: [
+          { test: /\.js$/, loader: 'jsx-loader' },
+          { test: /\.css$/, loader: 'style-loader!css-loader' }
+        ]
+      }
+    };
