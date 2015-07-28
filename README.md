@@ -84,7 +84,8 @@ Then build the required bundle, similar to this webpack.config.js:
       module: {
         loaders: [
           { test: /\.js$/, loader: 'jsx-loader' },
-          { test: /\.css$/, loader: 'style-loader!css-loader' }
+          { test: /\.css$/, loader: 'style-loader!css-loader' },
+          { test: /\.js$/, loader: "babel-loader"}
         ]
       }
     };
