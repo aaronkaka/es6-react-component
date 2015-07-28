@@ -61,10 +61,8 @@ In the consuming app, event the script include target container, as in the examp
     );
 
 ### How do I require() it into my consuming application?
-
-Publish your component to an npm registry; set up your project with webpack, including the jsx, css, and babel loaders.
     
-Then in your consuming app:
+Install the published component from your favorite npm registry:
  
     > npm i es6-react-component --save
 
@@ -73,7 +71,7 @@ Example javascript:
     import Cardstrap from 'es6-react-component';
     Cardstrap('.container');
     
-Then build the required bundle, similar to this webpack.config.js:
+Then build the required bundle with webpack, similar to this webpack.config.js:
 
     module.exports = {
       entry: ['./eventing.js'],
