@@ -51,7 +51,7 @@ class CardComponent extends React.Component {
 
   render() {
 
-    var data = this.state.data;
+    let data = this.state.data;
 
     return (
       <div className="panel panel-default cardComponent">

@@ -9,7 +9,7 @@ import CardComponent from './Card.js';
 function cardstrap(containerClass) {
 
   // Convention being used is that the card components go into container-styled divs
-  var containers = document.querySelectorAll(containerClass),
+  let containers = document.querySelectorAll(containerClass),
       container = containers.length;
 
   // Listen for card component initialization in each container
@@ -18,7 +18,7 @@ function cardstrap(containerClass) {
     document.getElementById(containers[container].id)
       .addEventListener('initCard', function (e) {
 
-        var targetData = e.detail,
+        let targetData = e.detail,
             targetElement = e.detail.targetElem;
 
         console.info('New Event: ' + e.type + ' for ' + targetElement);
