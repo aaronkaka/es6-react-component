@@ -9,13 +9,12 @@ import CardComponent from './Card.js';
 function cardstrap(containerClass) {
 
   // Convention being used is that the card components go into container-styled divs
-  let containers = document.querySelectorAll(containerClass),
-      container = containers.length;
+  let containers = document.querySelectorAll(containerClass);
 
   // Listen for card component initialization in each container
-  while (container--) {
+  [].map.call(containers, function(container) {
 
-    document.getElementById(containers[container].id)
+      document.getElementById(container.id)
       .addEventListener('initCard', function (e) {
 
         let targetData = e.detail,
@@ -28,7 +27,7 @@ function cardstrap(containerClass) {
           <CardComponent data={targetData} key={targetElement} />,
           document.getElementById(targetElement));
       });
-  }
+  });
 }
 
 document.body.addEventListener('scriptinclude', function(e) {
