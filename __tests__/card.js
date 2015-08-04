@@ -1,18 +1,18 @@
 jest.dontMock('../react_components/Card.js');
 
-var React = require('react/addons'),
+let React = require('react/addons'),
     Card = require('../react_components/Card.js'),
     TestUtils = React.addons.TestUtils;
 
 describe('Card', function() {
 
-  var targetData = {};
+  let targetData = {};
 
-  var CardElement = TestUtils.renderIntoDocument(
+  let CardElement = TestUtils.renderIntoDocument(
     <Card data={targetData} />
   );
 
-  var item = TestUtils.findRenderedDOMComponentWithClass(CardElement, 'panel');
+  let item = TestUtils.findRenderedDOMComponentWithClass(CardElement, 'panel');
 
   it('creates the card component', function () {
     expect(item).toBeDefined();

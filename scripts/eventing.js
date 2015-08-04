@@ -2,7 +2,7 @@
 
 function init() {
 
-  var eventedElementId = 'eventedElement',
+  let eventedElementId = 'eventedElement',
       eventedElement = document.getElementById(eventedElementId),
       foucTarget = document.getElementsByClassName('no-fouc')[0];
 
@@ -10,15 +10,14 @@ function init() {
   foucTarget ? foucTarget.className = '' : null;
 
   // Add the card container listeners, using the 'scriptinclude' event trigger
-  document.body.dispatchEvent(
-    new CustomEvent('scriptinclude', {
+  document.body.dispatchEvent(new CustomEvent('scriptinclude', {
       detail: '.container'
     })
   );
 
   // Data in detail objects could come from a service endpoint
 
-  var initComponent1 = new CustomEvent('initCard', {
+  let initComponent1 = new CustomEvent('initCard', {
       detail: {
           eventedElem: eventedElementId,
           targetElem: "div1",
@@ -29,7 +28,7 @@ function init() {
   });
   eventedElement.dispatchEvent(initComponent1);
 
-  var initComponent2 = new CustomEvent('initCard', {
+  let initComponent2 = new CustomEvent('initCard', {
       detail: {
           eventedElem: eventedElementId,
           targetElem: "div2",
@@ -40,7 +39,7 @@ function init() {
   });
   eventedElement.dispatchEvent(initComponent2);
 
-  var initComponent3 = new CustomEvent('initCard', {
+  let initComponent3 = new CustomEvent('initCard', {
       detail: {
           eventedElem: eventedElementId,
           targetElem: "div3",
@@ -52,7 +51,7 @@ function init() {
   eventedElement.dispatchEvent(initComponent3);
 
   // Outside the evented group
-  var initComponent4 = new CustomEvent('initCard', {
+  let initComponent4 = new CustomEvent('initCard', {
       detail: {
           // NO eventedElem
           targetElem: "div4",
