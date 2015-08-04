@@ -10,6 +10,7 @@ function cardstrap(containerClass) {
 
   // Convention being used is that the card components go into container-styled divs
   let containers = document.querySelectorAll(containerClass);
+  // Be advised that containers is a NodeList, not an Array
 
   // Listen for card component initialization in each container
   [].map.call(containers, function(container) {
