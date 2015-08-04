@@ -39,6 +39,7 @@
     "react",
     "component",
     "eventing",
-    "webpack"
+    "webpack",
+    "babel"
   ]
 }
