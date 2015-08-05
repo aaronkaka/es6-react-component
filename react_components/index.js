@@ -13,16 +13,16 @@ function cardstrap(containerClass) {
   // Be advised that containers is a NodeList, not an Array
 
   // Listen for card component initialization in each container
-  [].map.call(containers, function(container) {
+  [].map.call(containers, container => {
 
       document.getElementById(container.id)
-      .addEventListener('initCard', function (e) {
+      .addEventListener('initCard', e => {
 
         let targetData = e.detail,
             targetElement = e.detail.targetElem;
 
-        console.info('New Event: ' + e.type + ' for ' + targetElement);
-        console.info('Custom data: ', targetData);
+        console.info(`New Event ${e.type} for ${targetElement}`);
+        console.info(targetData);
 
         React.render(
           <CardComponent data={targetData} key={targetElement} />,
@@ -31,8 +31,6 @@ function cardstrap(containerClass) {
   });
 }
 
-document.body.addEventListener('scriptinclude', function(e) {
-  cardstrap(e.detail);
-});
+document.body.addEventListener('scriptinclude', e => cardstrap(e.detail) );
 
 export default cardstrap;
