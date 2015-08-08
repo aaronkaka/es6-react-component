@@ -1,16 +1,16 @@
 # ECMAScript 6 React Component
 
-![Image](screenshot.png?raw=true "screenshot")
+![Image](screenshot_mini.jpg?raw=true "screenshot")
 
 ## Goals
 
 A proof-of-concept that evolves [commonjs-react-components](https://github.com/aaronkaka/commonjs-react-components) to 
-ES6, and achieves the following goals:
+ES6 syntax and constructs, and achieves the following goals:
 
 - Build and share decoupled and responsive web components
 - Abstract away the component's implementation without leakage
 - No component API, event all interaction
-- **External styling is bundled with and scoped to the component**
+- External styling is bundled with and scoped to the component
 
 ## Tool Chain
 
@@ -32,9 +32,9 @@ After cloning the repo:
 
 Once the above is complete, open a browser tab to **localhost:8080**.
 
-### Live Reload
+### Hot Reload
 
-Hot module replacement is activated, so that any saved change to the watched source automatically reloads the browser page.
+Hot module replacement is activated, so that any saved change to the watched source automatically reloads the page.
 
 ### Test
 
@@ -44,15 +44,15 @@ The project is wired to unit test with the Jest framework.
 
 ## Consume
 
-The card component is built for use with Bootstrap v3.
+This card component targets Bootstrap v3 styling.
 
 ### Script Include
 
-In the case of a script include for _build/dist.card-component.js_, build the minified version:
+Build the minified version of this component to build/dist.card-component.js:
 
     > webpack -p
     
-In the consuming app, event the script include target container, as in the example:
+Include it in the consuming page, then event the target container, e.g.
 
     document.body.dispatchEvent(
         new CustomEvent('scriptinclude', {
@@ -60,10 +60,8 @@ In the consuming app, event the script include target container, as in the examp
         })
     );
 
-### How do I require() it into my consuming application?
-    
-Install the published component from your favorite npm registry:
- 
+### How do I consume the npm module?
+     
     > npm i es6-react-component --save
 
 Example javascript:
