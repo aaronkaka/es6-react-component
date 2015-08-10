@@ -1,13 +1,13 @@
 import React from 'react';
-import Avatar from './Avatar.js';
-import Bio from './Bio.js';
-import Alert from './Alert.js';
+import Avatar from './Avatar';
+import Bio from './Bio';
+import Alert from './Alert';
 
 class CardComponent extends React.Component {
 
   constructor(props) {
 
-    super();
+    super(props);
 
     this.state = {
       data: props.data,

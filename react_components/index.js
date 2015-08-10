@@ -4,12 +4,12 @@
 import styles from '../css/card.css';
 
 import React from 'react';
-import CardComponent from './Card.js';
+import CardComponent from './Card';
 
-function cardstrap(containerClass) {
+function cardstrap(containerType) {
 
   // Convention being used is that the card components go into container-styled divs
-  let containers = document.querySelectorAll(containerClass);
+  let containers = document.querySelectorAll(containerType);
   // Be advised that containers is a NodeList, not an Array
 
   // Listen for card component initialization in each container

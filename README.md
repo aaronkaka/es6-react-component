@@ -5,7 +5,7 @@
 ## Goals
 
 A proof-of-concept that evolves [commonjs-react-components](https://github.com/aaronkaka/commonjs-react-components) to 
-ES6 syntax and constructs, and achieves the following goals:
+ES6 modules, classes, and syntax to achieve the following goals:
 
 - Build and share decoupled and responsive web components
 - Abstract away the component's implementation without leakage
@@ -52,13 +52,9 @@ Build the minified version of this component to build/dist.card-component.js:
 
     > webpack -p
     
-Include it in the consuming page, then event the target container, e.g.
+Include it in the consuming page, then event `scriptinclude` with the container type, e.g.
 
-    document.body.dispatchEvent(
-        new CustomEvent('scriptinclude', {
-            detail: '.container'
-        })
-    );
+    detail: '.container'
 
 ### How do I consume the npm module?
      
