@@ -1,5 +1,3 @@
-'use strict';
-
 // component styling
 import styles from '../css/card.css';
 

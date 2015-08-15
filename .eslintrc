@@ -1,0 +1,11 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
+  "parser": "babel-eslint",
+  "environment": {
+    "browser": true,
+    "es6": true
+  }
+}

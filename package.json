@@ -1,6 +1,6 @@
 {
   "name": "es6-react-component",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "POC for ECMAScript 6 (ES2015) evented components with bundled styling, powered by React, packaged and transpiled by webpack/Babel.",
   "main": "react_components/index.js",
   "scripts": {
@@ -24,9 +24,12 @@
   },
   "devDependencies": {
     "babel-core": "^5.8.5",
+    "babel-eslint": "^4.0.6",
     "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
     "css-loader": "^0.15.4",
+    "eslint": "^1.1.0",
+    "eslint-loader": "^1.0.0",
     "jest-cli": "^0.4.15",
     "jsx-loader": "^0.13.2",
     "react-tools": "^0.13.3",

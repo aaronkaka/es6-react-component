@@ -8,10 +8,13 @@ module.exports = {
     filename: 'build/[name].card-component.js'
   },
   module: {
+    preLoaders: [
+      {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+    ],
     loaders: [
       { test: /\.js$/, loader: 'jsx-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/}
     ]
   }
 };
