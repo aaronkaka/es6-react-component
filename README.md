@@ -8,7 +8,7 @@ A proof-of-concept that evolves [commonjs-react-components](https://github.com/a
 ES6 modules, classes, and syntax to achieve the following goals:
 
 - Build and share decoupled and responsive web components
-- Abstract away the component's implementation without leakage
+- Encapsulate the implementation; no knowledge of React required to consume the component
 - No component API, event all interaction
 - External styling is bundled with and scoped to the component
 
