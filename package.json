@@ -1,6 +1,6 @@
 {
   "name": "es6-react-component",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "POC for ECMAScript 6 (ES2015) evented components with bundled styling, powered by React, packaged and transpiled by webpack/Babel.",
   "main": "react_components/index.js",
   "scripts": {

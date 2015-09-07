@@ -14,7 +14,7 @@ ES6 modules, classes, and syntax to achieve the following goals:
 
 ## Tool Chain
 
-Install [NodeJS](http://nodejs.org/download/). This automatically installs npm.
+Install [NodeJS](http://nodejs.org/download/). This installs npm.
 
 Make the webpack command available:
 
@@ -32,6 +32,8 @@ After cloning the repo:
 
 Once the above is complete, open a browser tab to **localhost:8080**.
 
+The dev.card-component.js is automagically hoisted into the build directory for use.
+
 ### Hot Reload
 
 Hot module replacement is activated, so that any saved change to the watched source automatically reloads the page.
@@ -44,11 +46,11 @@ The project is wired to unit test with the Jest framework.
 
 ## Consume
 
-This card component targets Bootstrap v3 styling.
-
+The component can be consumed from either an ES5 or ES6 application, and targets Bootstrap v3 styling.
+     
 ### Script Include
 
-Build the minified version of this component to build/dist.card-component.js:
+Build the transpiled, minified version of this component to build/dist.card-component.js:
 
     > webpack -p
     
@@ -57,12 +59,14 @@ Include it in the consuming page, then event `scriptinclude` with the container 
     detail: '.container'
 
 ### How do I consume the npm module?
+
+Do as described in this section from the consuming application:
      
     > npm i es6-react-component --save
 
 Example javascript:
 
-    import Cardstrap from 'es6-react-component';
+    var Cardstrap = require('es6-react-component');
     Cardstrap('.container');
     
 Then build the required bundle with webpack, similar to this webpack.config.js:
