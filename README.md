@@ -85,3 +85,11 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
         ]
       }
     };
+    
+### Events
+
+The following events and data are emitted by this component.
+
+**card-bioDeleted**: { detail: [username] }
+
+**card-liked**: { detail: [username] }

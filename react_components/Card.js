@@ -11,11 +11,19 @@ class CardComponent extends React.Component {
 
     this.state = {
       data: props.data,
+      likes: 0,
+      likeDisplay: '',
       evented: document.getElementById(props.data.eventedElem)
     };
 
+    // Events
+    this.BIO_DELETED_EVENT = 'card-bioDeleted';
+    this.LIKE_EVENT = 'card-liked';
+
+    // Manual Binding
     this.deleteBio = this.deleteBio.bind(this);
     this._deleteBio = this._deleteBio.bind(this);
+    this.like = this.like.bind(this);
   }
 
   deleteBio() {
@@ -23,7 +31,7 @@ class CardComponent extends React.Component {
     this.state.data.bio = '[deleted]';
     this.setState(this.state);
     if (this.state.evented) {
-      this.state.evented.dispatchEvent(new CustomEvent('bioDeleted', { detail: this.state.data.username } ));
+      this.state.evented.dispatchEvent(new CustomEvent(this.BIO_DELETED_EVENT, { detail: this.state.data.username } ));
     }
   }
 
@@ -35,17 +43,31 @@ class CardComponent extends React.Component {
     }
   }
 
+  like(e) {
+
+    // don't refresh page on button press
+    e.preventDefault();
+
+    this.state.likes++;
+    this.state.likeDisplay = '+' + this.state.likes;
+    this.setState(this.state);
+    // if you want to set up a remote listener
+    if (this.state.evented) {
+      this.state.evented.dispatchEvent(new CustomEvent(this.LIKE_EVENT, { detail: this.state.data.username } ));
+    }
+  }
+
   componentDidMount() {
 
     if (this.state.evented) {
-      this.state.evented.addEventListener('bioDeleted', this._deleteBio);
+      this.state.evented.addEventListener(this.BIO_DELETED_EVENT, this._deleteBio);
     }
   }
 
   componentWillUnmount() {
 
     if (this.state.evented) {
-      this.state.evented.removeEventListener('bioDeleted', this._deleteBio);
+      this.state.evented.removeEventListener(this.BIO_DELETED_EVENT, this._deleteBio);
     }
   }
 
@@ -55,7 +77,11 @@ class CardComponent extends React.Component {
 
     return (
       <div className="panel panel-default cardComponent">
-         <div className="panel-heading cardComponent"><h4 className="cardComponent">{data.username}</h4></div>
+         <div className="panel-heading cardComponent">
+           <h4 className="cardComponent">{data.username}
+            <a href="#"> <span className="badge">{this.state.likeDisplay}</span></a>
+           </h4>
+         </div>
           <div className="panel-body cardComponent">
             <Avatar imgSrc={data.avatar || 'http://placehold.it/150x150'} />
             <div className="clearfix cardComponent"></div>
@@ -69,7 +95,8 @@ class CardComponent extends React.Component {
             <form>
               <div className="input-group cardComponent">
                 <div className="input-group-btn cardComponent">
-                <button className="btn btn-default cardComponent">+1</button><button className="btn btn-default cardComponent">s</button>
+                  <button ref="likeButton" className="btn btn-default cardComponent" onClick={this.like}>+1</button>
+                  <button className="btn btn-default cardComponent">s</button>
                 </div>
                 <input type="text" className="form-control" placeholder="Add a comment.." />
               </div>

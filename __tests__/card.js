@@ -6,15 +6,30 @@ let React = require('react/addons'),
 
 describe('Card', function() {
 
-  let targetData = {};
+  let targetData = {
+        targetElem: "div4",
+        username: "outsider.card",
+        bio: "This card does not belong to the evented group of cards."
+      },
 
-  let CardElement = TestUtils.renderIntoDocument(
-    <Card data={targetData} />
-  );
+      CardElement = TestUtils.renderIntoDocument(
+        <Card data={targetData} />
+      ),
 
-  let item = TestUtils.findRenderedDOMComponentWithClass(CardElement, 'panel');
+      label = TestUtils.findRenderedDOMComponentWithTag(CardElement, 'span');
 
-  it('creates the card component', function () {
-    expect(item).toBeDefined();
+  it('creates the card component instance', function () {
+    expect(CardElement).toBeDefined();
   });
+
+  it('initially has no like count displayed', function () {
+    expect(React.findDOMNode(label).textContent).toEqual('');
+  });
+
+  it('increments and displays the like count', function () {
+    let likeButton = React.findDOMNode(CardElement.refs.likeButton);
+    TestUtils.Simulate.click(likeButton);
+    expect(React.findDOMNode(label).textContent).toEqual('+1');
+  });
+
 });
