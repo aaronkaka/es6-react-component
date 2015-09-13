@@ -14,7 +14,11 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'jsx-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/}
+      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/},
+      {test: /\.woff$/, loader: 'url?limit=100000'},
+      {test: /\.eot$/, loader: 'url?limit=100000'},
+      {test: /\.svg$/, loader: 'url?limit=100000'},
+      {test: /\.ttf$/, loader: 'url?limit=100000'}
     ]
   }
 };

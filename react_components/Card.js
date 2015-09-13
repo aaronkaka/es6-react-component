@@ -13,17 +13,21 @@ class CardComponent extends React.Component {
       data: props.data,
       likes: 0,
       likeDisplay: '',
+      currentComment: '',
       evented: document.getElementById(props.data.eventedElem)
     };
 
     // Events
     this.BIO_DELETED_EVENT = 'card-bioDeleted';
     this.LIKE_EVENT = 'card-liked';
+    this.SHARE_COMMENT_EVENT = 'card-comment';
 
     // Manual Binding
     this.deleteBio = this.deleteBio.bind(this);
     this._deleteBio = this._deleteBio.bind(this);
     this.like = this.like.bind(this);
+    this.shareComment = this.shareComment.bind(this);
+    this._commentChange = this._commentChange.bind(this);
   }
 
   deleteBio() {
@@ -51,10 +55,28 @@ class CardComponent extends React.Component {
     this.state.likes++;
     this.state.likeDisplay = '+' + this.state.likes;
     this.setState(this.state);
-    // if you want to set up a remote listener
+
     if (this.state.evented) {
       this.state.evented.dispatchEvent(new CustomEvent(this.LIKE_EVENT, { detail: this.state.data.username } ));
     }
+  }
+
+  shareComment(e) {
+
+    // don't refresh page on button press
+    e.preventDefault();
+
+    if (this.state.evented) {
+      let sharedCommentEvent = { detail: {username: this.state.data.username, comment: this.state.currentComment} };
+      this.state.evented.dispatchEvent(new CustomEvent(this.SHARE_COMMENT_EVENT, sharedCommentEvent));
+      if (console.info) {
+        console.info(sharedCommentEvent);
+      }
+    }
+  }
+
+  _commentChange(e) {
+    this.setState({currentComment: e.target.value});
   }
 
   componentDidMount() {
@@ -96,9 +118,11 @@ class CardComponent extends React.Component {
               <div className="input-group cardComponent">
                 <div className="input-group-btn cardComponent">
                   <button ref="likeButton" className="btn btn-default cardComponent" onClick={this.like}>+1</button>
-                  <button className="btn btn-default cardComponent">s</button>
+                  <button ref="shareCommentButton" className="btn btn-default cardComponent" onClick={this.shareComment}>
+                    <i className="icon-export-1" />
+                  </button>
                 </div>
-                <input type="text" className="form-control" placeholder="Add a comment.." />
+                <input type="text" className="form-control" placeholder="Add a comment..." onChange={this._commentChange} />
               </div>
             </form>
 

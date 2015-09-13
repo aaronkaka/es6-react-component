@@ -1,5 +1,6 @@
 // component styling
 import styles from '../css/card.css';
+import fontStyles from '../css/fontello.css';
 
 import React from 'react';
 import CardComponent from './Card';
