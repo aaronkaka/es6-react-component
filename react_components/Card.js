@@ -11,11 +11,16 @@ class CardComponent extends React.Component {
 
     this.state = {
       data: props.data,
+      usernameDisplay: props.data.username,
       likes: 0,
       likeDisplay: '',
       currentComment: '',
       evented: document.getElementById(props.data.eventedElem)
     };
+
+    if (this.state.usernameDisplay.length > 30) {
+      this.state.usernameDisplay = this.state.usernameDisplay.substring(0,30);
+    }
 
     // Events
     this.BIO_DELETED_EVENT = 'card-bioDeleted';
@@ -100,7 +105,7 @@ class CardComponent extends React.Component {
     return (
       <div className="panel panel-default cardComponent">
          <div className="panel-heading cardComponent">
-           <h4 className="cardComponent">{data.username}
+           <h4 className="cardComponent">{this.state.usernameDisplay}
             <a href="#"> <span className="badge">{this.state.likeDisplay}</span></a>
            </h4>
          </div>

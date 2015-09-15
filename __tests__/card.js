@@ -7,9 +7,9 @@ let React = require('react/addons'),
 describe('Card', function() {
 
   let targetData = {
-        targetElem: "div4",
-        username: "outsider.card",
-        bio: "This card does not belong to the evented group of cards."
+        targetElem: 'div4',
+        username: 'outsider.abcdefghijklmnopqrstuvwxyz',
+        bio: 'This card does not belong to the evented group of cards.'
       },
 
       CardElement = TestUtils.renderIntoDocument(
@@ -20,6 +20,11 @@ describe('Card', function() {
 
   it('creates the card component instance', function () {
     expect(CardElement).toBeDefined();
+  });
+
+  it('correctly displays the username', function () {
+    let usernameDisplay = TestUtils.findRenderedDOMComponentWithTag(CardElement, 'h4');
+    expect(React.findDOMNode(usernameDisplay).textContent).toEqual('outsider.abcdefghijklmnopqrstu '); // add spacer
   });
 
   it('initially has no like count displayed', function () {

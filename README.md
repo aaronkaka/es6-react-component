@@ -92,3 +92,5 @@ The following events and data are emitted by this component.
 **card-bioDeleted**: { detail: [username] }
 
 **card-liked**: { detail: [username] }
+
+**card-comment**: { detail: { username: [username], comment: [comment] } }
