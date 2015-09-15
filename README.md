@@ -4,9 +4,9 @@
 
 ## Goals
 
-A proof-of-concept non-trivial component written with ES6 modules, classes, and syntax to achieve the following goals:
+Card component written with ES6 modules, classes, and syntax to achieve the following goals:
 
-- Build and share decoupled and responsive web UI components
+- Reusable and useful web UI component
 - Encapsulate the implementation; no knowledge of React required to consume the component
 - No component API, event all interaction
 - External styling is bundled with and scoped to the component
@@ -87,7 +87,7 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
     
 ### Events
 
-The following events and data are emitted by this component.
+The following events and data are emitted by this card component.
 
 **card-bioDeleted**: { detail: [username] }
 
