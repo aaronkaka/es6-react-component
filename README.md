@@ -4,12 +4,12 @@
 
 ## Goals
 
-Card component written with ES6 modules, classes, and syntax to achieve the following goals:
+Card web component written with ES6 modules, classes, and syntax using React to achieve the following goals:
 
-- Reusable and useful web UI component
+- Reusable and responsively-designed; just drop into DOM node
 - Encapsulate the implementation; no knowledge of React required to consume the component
 - No component API, event all interaction
-- External styling is bundled with and scoped to the component
+- External styling is bundled with and scoped to the component; targets Bootstrap 3
 
 ## Tool Chain
 
@@ -45,7 +45,7 @@ The project is wired to unit test with the Jest framework.
 
 ## Consume
 
-The component can be consumed from either an ES5 or ES6 application, and targets Bootstrap v3 styling.
+The component can be consumed from either an ES5 or ES6 application.
      
 ### Script Include
 
