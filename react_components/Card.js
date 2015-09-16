@@ -62,7 +62,8 @@ class CardComponent extends React.Component {
     this.setState(this.state);
 
     if (this.state.evented) {
-      this.state.evented.dispatchEvent(new CustomEvent(this.LIKE_EVENT, { detail: this.state.data.username } ));
+      let likeEvent = { detail: {username: this.state.data.username, likes: this.state.likes} };
+      this.state.evented.dispatchEvent(new CustomEvent(this.LIKE_EVENT, likeEvent));
     }
   }
 
@@ -72,11 +73,10 @@ class CardComponent extends React.Component {
     e.preventDefault();
 
     if (this.state.evented) {
-      let sharedCommentEvent = { detail: {username: this.state.data.username, comment: this.state.currentComment} };
-      this.state.evented.dispatchEvent(new CustomEvent(this.SHARE_COMMENT_EVENT, sharedCommentEvent));
-      if (console.info) {
-        console.info(sharedCommentEvent);
-      }
+      // simply event out as there are a myriad of use cases for handling this event (e.g. private or moderated comments)
+      let commentEvent = { detail: {username: this.state.data.username, comment: this.state.currentComment} };
+      this.state.evented.dispatchEvent(new CustomEvent(this.SHARE_COMMENT_EVENT, commentEvent));
+      window.console && console.log(commentEvent);
     }
   }
 
