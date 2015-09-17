@@ -7,7 +7,7 @@ function init() {
       foucTarget = document.getElementsByClassName('no-fouc')[0];
 
   // Un-hide the page elements now that the DOM has fully rendered
-  foucTarget ? foucTarget.className = '' : null;
+  foucTarget && (foucTarget.className = '');
 
   // Add the card container listeners, using the 'scriptinclude' event trigger
   document.body.dispatchEvent(new CustomEvent('scriptinclude', {
@@ -23,7 +23,7 @@ function init() {
         targetElem: "div1",
         username: "aaron.kaka",
         bio: "This is Aaron's bio.",
-        avatar: "images/avatar.png"
+        avatar: "images/avatar.jpg"
       }
     })
   );
