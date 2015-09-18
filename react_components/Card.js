@@ -18,8 +18,10 @@ class CardComponent extends React.Component {
       evented: document.getElementById(props.data.eventedElem)
     };
 
-    if (this.state.usernameDisplay.length > 30) {
-      this.state.usernameDisplay = this.state.usernameDisplay.substring(0,30);
+    const MAX_USERNAME_LENGTH = 30;
+
+    if (this.state.usernameDisplay.length > MAX_USERNAME_LENGTH) {
+      this.state.usernameDisplay = this.state.usernameDisplay.substring(0, MAX_USERNAME_LENGTH);
     }
 
     // Events
