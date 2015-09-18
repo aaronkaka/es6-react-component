@@ -2,6 +2,8 @@
 
 ![Image](screenshot_mini.jpg?raw=true "screenshot")
 
+[![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
+
 ## Goals
 
 Card web component written with ES6 modules, classes, and syntax using React to achieve the following goals:

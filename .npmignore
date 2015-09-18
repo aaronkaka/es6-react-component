@@ -5,3 +5,4 @@ index.html
 .idea
 webpack.config.js
 __tests__
+.travis.yml
