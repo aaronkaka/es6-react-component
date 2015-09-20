@@ -5,9 +5,9 @@
   "main": "react_components/index.js",
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
-    "test": "jest --coverage",
+    "test": "jest",
     "lint": "DEBUG=eslint:cli-engine ./node_modules/.bin/eslint ./react_components/**",
-    "build": "webpack"
+    "build": "webpack && jest --coverage"
   },
   "jest": {
     "scriptPreprocessor": "./node_modules/babel-jest",
