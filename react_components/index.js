@@ -7,11 +7,11 @@ import CardComponent from './Card';
 
 function cardstrap(containerType) {
 
-  // Convention being used is that the card components go into container-styled divs
+  // Convention used is that cards go into container-styled divs
   let containers = document.querySelectorAll(containerType);
   // Be advised that containers is a NodeList, not an Array
 
-  // Listen for card component initialization in each container
+  // Listen for card instance initialization in each container
   [].map.call(containers, container => {
 
       document.getElementById(container.id)
@@ -30,6 +30,6 @@ function cardstrap(containerType) {
   });
 }
 
-document.body.addEventListener('cardstrap', e => cardstrap(e.detail) );
+document.body.addEventListener('cardstrap', e => cardstrap(e.detail));
 
 export default cardstrap;
