@@ -12,10 +12,10 @@ Card web component written with ES6 modules, classes, and syntax using React to 
 - Encapsulate the implementation; no knowledge of React required to consume the component
 - No component API, event all interaction
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
-- Cross-browser for modern browsers (no IE); thus no style scoped attribute or Shadow DOM encapsulation
+- Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
 
-(no IE) This implementation uses the native CustomEvent constructor, and no version of IE supports this. 
-MS Edge does! This is to reduce complexity and encourage the use of web standards.
+[no IE] This implementation uses the native CustomEvent constructor, which no version of IE supports (but MS Edge does!). 
+This choice was made to reduce complexity and encourage adherence to web standards.
 
 ## Tool Chain
 
@@ -59,7 +59,7 @@ Build the transpiled, minified version of this component to build/dist.card-comp
 
     > webpack -p
     
-Include it in the consuming page, then event `scriptinclude` with the container type, e.g.
+Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
     detail: '.container'
 

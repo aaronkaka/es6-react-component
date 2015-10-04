@@ -30,6 +30,6 @@ function cardstrap(containerType) {
   });
 }
 
-document.body.addEventListener('scriptinclude', e => cardstrap(e.detail) );
+document.body.addEventListener('cardstrap', e => cardstrap(e.detail) );
 
 export default cardstrap;

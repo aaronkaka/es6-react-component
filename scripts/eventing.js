@@ -9,8 +9,8 @@ function init() {
   // Un-hide the page elements now that the DOM has fully rendered
   foucTarget && (foucTarget.className = '');
 
-  // Add the card container listeners, using the 'scriptinclude' event trigger
-  document.body.dispatchEvent(new CustomEvent('scriptinclude', {
+  // Add the card container listeners, using the necessary event trigger
+  document.body.dispatchEvent(new CustomEvent('cardstrap', {
       detail: '.container'
     })
   );
