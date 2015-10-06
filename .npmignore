@@ -7,3 +7,4 @@ webpack.config.js
 __tests__
 .travis.yml
 coverage
+firebase.json

@@ -32,7 +32,7 @@ export default function cardstrap(containerType) {
 
 export function destroyCard(elementId) {
 
-  console.info('Unmounted card at ' + elementId + ':',
+  console.info(`Unmounted card at ${elementId}:`,
     React.unmountComponentAtNode(document.getElementById(elementId))
   );
 }

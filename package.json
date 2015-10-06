@@ -1,6 +1,6 @@
 {
   "name": "es6-react-component",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Card component with bundled styling targeting Bootstrap 3, evented interaction, and powered by React.",
   "main": "react_components/index.js",
   "scripts": {
