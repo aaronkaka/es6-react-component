@@ -10,7 +10,7 @@ Card web component written with ES6 modules, classes, and syntax using React to 
 
 - Reusable and responsively-designed; just drop into DOM node
 - Self-contained; no knowledge of React required to consume the component
-- No component API, event all interaction
+- No component API; event all interaction
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
 - Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
 
@@ -62,6 +62,10 @@ Build the transpiled, minified version of this component to build/dist.card-comp
 Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
     detail: '.container'
+    
+To remove a card instance, event `destroyCard` with the DOM element ID, e.g.
+
+    detail: 'div2'
 
 ### How do I consume the npm module?
 
@@ -71,8 +75,8 @@ Do as described in this section from the consuming application:
 
 Example javascript:
 
-    var Cardstrap = require('es6-react-component');
-    Cardstrap('.container');
+    var cardstrap = require('es6-react-component').default;
+    cardstrap('.container');
     
 Then build the required bundle with webpack, similar to this webpack.config.js:
 
@@ -84,9 +88,13 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
       },
       module: {
         loaders: [
-          { test: /\.js$/, loader: 'jsx-loader' },
-          { test: /\.css$/, loader: 'style-loader!css-loader' },
-          { test: /\.js$/, loader: "babel-loader"}
+          {test: /\.js$/, loader: 'jsx-loader'},
+          {test: /\.css$/, loader: 'style-loader!css-loader'},
+          {test: /\.js$/, loader: 'babel-loader'},
+          {test: /\.woff$/, loader: 'url?limit=100000'},
+          {test: /\.eot$/, loader: 'url?limit=100000'},
+          {test: /\.svg$/, loader: 'url?limit=100000'},
+          {test: /\.ttf$/, loader: 'url?limit=100000'}
         ]
       }
     };

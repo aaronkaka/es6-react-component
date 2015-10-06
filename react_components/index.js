@@ -5,7 +5,7 @@ import fontStyles from '../css/fontello.css';
 import React from 'react';
 import CardComponent from './Card';
 
-function cardstrap(containerType) {
+export default function cardstrap(containerType) {
 
   // Convention used is that cards go into container-styled divs
   let containers = document.querySelectorAll(containerType);
@@ -30,6 +30,13 @@ function cardstrap(containerType) {
   });
 }
 
-document.body.addEventListener('cardstrap', e => cardstrap(e.detail));
+export function destroyCard(elementId) {
 
-export default cardstrap;
+  console.info('Unmounted card at ' + elementId + ':',
+    React.unmountComponentAtNode(document.getElementById(elementId))
+  );
+}
+
+// Event Listeners for script include scenario
+document.body.addEventListener('cardstrap', e => cardstrap(e.detail));
+document.body.addEventListener('destroyCard', e => destroyCard(e.detail));

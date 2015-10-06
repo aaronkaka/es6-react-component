@@ -62,6 +62,13 @@ function init() {
     })
   );
 
+  // Remove a card instance after some delay
+  setTimeout(function() {
+    document.body.dispatchEvent(new CustomEvent('destroyCard', {
+      detail: 'div2'
+    }))
+  }, 2000);
+
 }
 
 window.onload = init;
