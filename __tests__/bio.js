@@ -1,7 +1,7 @@
 jest.dontMock('../react_components/Bio.js');
 
 let React = require('react/addons'),
-    Bio = require('../react_components/Bio.js'),
+    Bio = require('../react_components/Bio'),
     TestUtils = React.addons.TestUtils;
 
 describe('Bio', function() {
@@ -13,6 +13,6 @@ describe('Bio', function() {
   let item = TestUtils.findRenderedDOMComponentWithTag(BioElement, 'p');
 
   it('renders the bio paragraph', function () {
-    expect(item.getDOMNode().textContent).toEqual('This is a bio.');
+    expect(item.textContent).toEqual('This is a bio.');
   });
 });

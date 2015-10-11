@@ -3,6 +3,7 @@ import styles from '../css/card.css';
 import fontStyles from '../css/fontello.css';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import CardComponent from './Card';
 
 export default function cardstrap(containerType) {
@@ -23,7 +24,7 @@ export default function cardstrap(containerType) {
         console.info(`New Event ${e.type} for ${targetElement}`);
         console.info(targetData);
 
-        React.render(
+        ReactDOM.render(
           <CardComponent data={targetData} key={targetElement} />,
           document.getElementById(targetElement));
       });
@@ -33,7 +34,7 @@ export default function cardstrap(containerType) {
 export function destroyCard(elementId) {
 
   console.info(`Unmounted card at ${elementId}:`,
-    React.unmountComponentAtNode(document.getElementById(elementId))
+    ReactDOM.unmountComponentAtNode(document.getElementById(elementId))
   );
 }
 
