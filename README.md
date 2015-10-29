@@ -103,8 +103,17 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
 
 The following events and data are emitted by this card component.
 
-**card-bioDeleted**: { detail: [sUsername] }
-
-**card-liked**: { detail: { username: [sUsername], likes: [iLikes] } }
-
-**card-comment**: { detail: { username: [sUsername], comment: [sComment] } }
+<table>
+    <tr>
+        <th>CustomEvent</th><th>detail</th>
+    </tr>
+    <tr>
+        <td>card-bioDeleted</td><td>[sUsername]</td>
+    </tr>
+    <tr>
+        <td>card-liked</td><td>{ username: [sUsername], likes: [iLikes] }</td>
+    </tr>
+    <tr>
+        <td>card-comment</td><td>{ username: [sUsername], comment: [sComment] }</td>
+    </tr>
+</table>
