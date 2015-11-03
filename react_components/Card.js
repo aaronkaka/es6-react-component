@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Avatar from './Avatar';
 import Bio from './Bio';
 import Alert from './Alert';
@@ -139,5 +139,15 @@ class CardComponent extends React.Component {
   }
 
 }
+
+CardComponent.propTypes = {
+  data: PropTypes.shape({
+      eventedElem: PropTypes.string,
+      targetElem: PropTypes.string.isRequired,
+      username: PropTypes.string,
+      bio: PropTypes.string,
+      avatar: PropTypes.string
+    })
+};
 
 export default CardComponent;
