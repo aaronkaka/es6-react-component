@@ -12,7 +12,6 @@ module.exports = {
       {test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/}
     ],
     loaders: [
-      {test: /\.js$/, loader: 'jsx-loader', exclude: /node_modules/},
       {test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/},
       {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
       {test: /\.woff$/, loader: 'url?limit=100000', exclude: /node_modules/},
