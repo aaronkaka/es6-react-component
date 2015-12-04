@@ -144,7 +144,8 @@ CardComponent.propTypes = {
   data: PropTypes.shape({
       eventedElem: PropTypes.string,
       targetElem: PropTypes.string.isRequired,
-      username: PropTypes.string,
+      userId: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
       bio: PropTypes.string,
       avatar: PropTypes.string
     })

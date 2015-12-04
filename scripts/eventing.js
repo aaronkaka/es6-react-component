@@ -21,6 +21,7 @@ function init() {
       detail: {
         eventedElem: eventedElementId,
         targetElem: "div1",
+        userId: "3c832cbae883f988cfb877f4322d137c",
         username: "aaron.kaka",
         bio: "This is Aaron's bio.",
         avatar: "images/avatar.jpg"
@@ -32,6 +33,7 @@ function init() {
       detail: {
         eventedElem: eventedElementId,
         targetElem: "div2",
+        userId: "c685a8ed331c70a47dea8812da69c1bd",
         username: "joe.schmo",
         bio: "This is Joe's bio.",
         avatar: "images/wired.jpg"
@@ -43,6 +45,7 @@ function init() {
       detail: {
         eventedElem: eventedElementId,
         targetElem: "div3",
+        userId: "40568a02136514ee93b6847a854ede22",
         username: "suzie.q",
         bio: "This is Suzie's bio.",
         avatar: "images/suzieq.jpg"
@@ -55,6 +58,7 @@ function init() {
       detail: {
         // NO eventedElem
         targetElem: "div4",
+        userId: "9e9fdb4e7377b80e7ce8c10c57db1676",
         username: "outsider.card",
         bio: "This card does not belong to the evented group of cards."
         // NO avatar

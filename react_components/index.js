@@ -1,4 +1,4 @@
-// component styling
+// bundled component styling
 import styles from '../css/card.css';
 import fontStyles from '../css/fontello.css';
 
@@ -19,13 +19,14 @@ export default function cardstrap(containerType) {
       .addEventListener('initCard', e => {
 
         let targetData = e.detail,
-            targetElement = e.detail.targetElem;
+            targetElement = e.detail.targetElem,
+            keyId = e.detail.userId;
 
         console.info(`New Event ${e.type} for ${targetElement}`);
         console.info(targetData);
 
         ReactDOM.render(
-          <CardComponent data={targetData} key={targetElement} />,
+          <CardComponent data={targetData} key={keyId} />,
           document.getElementById(targetElement));
       });
   });
