@@ -1,8 +1,8 @@
 jest.dontMock('../react_components/Bio.js');
 
-let React = require('react/addons'),
+let React = require('react'),
     Bio = require('../react_components/Bio'),
-    TestUtils = React.addons.TestUtils;
+    TestUtils = require('react-addons-test-utils');
 
 describe('Bio', function() {
 
