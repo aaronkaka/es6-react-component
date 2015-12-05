@@ -100,7 +100,21 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
     
 ### Events
 
-The following events and data are emitted by this card component.
+After the card component is bootstrapped for a container, each instance is initialized with the `initCard` event:
+
+      eventedElement.dispatchEvent(new CustomEvent('initCard', {
+          detail: {
+            eventedElem: eventedElementId,
+            targetElem: "div2",                         // Required
+            userId: "c685a8ed331c70a47dea8812da69c1bd", // Required
+            username: "joe.schmo",                      // Required
+            bio: "This is Joe's bio.",
+            avatar: "images/wired.jpg"
+          }
+        })
+      );
+
+The following events and data are emitted by this component.
 
 <table>
     <tr>
