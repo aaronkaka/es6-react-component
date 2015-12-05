@@ -107,12 +107,12 @@ The following events and data are emitted by this card component.
         <th>CustomEvent</th><th>detail</th>
     </tr>
     <tr>
-        <td>card-bioDeleted</td><td>[sUsername]</td>
+        <td>card-bioDeleted</td><td>{ userId: [sUserId], username: [sUsername] }</td>
     </tr>
     <tr>
-        <td>card-liked</td><td>{ username: [sUsername], likes: [iLikes] }</td>
+        <td>card-liked</td><td>{ userId: [sUserId], username: [sUsername], likes: [iLikes] }</td>
     </tr>
     <tr>
-        <td>card-comment</td><td>{ username: [sUsername], comment: [sComment] }</td>
+        <td>card-comment</td><td>{ userId: [sUserId], username: [sUsername], comment: [sComment] }</td>
     </tr>
 </table>
