@@ -42,14 +42,19 @@ class CardComponent extends React.Component {
     this.state.data.bio = '[deleted]';
     this.setState(this.state);
     if (this.state.evented) {
-      this.state.evented.dispatchEvent(new CustomEvent(this.BIO_DELETED_EVENT, { detail: this.state.data.username } ));
+      this.state.evented.dispatchEvent(new CustomEvent(this.BIO_DELETED_EVENT, {
+        detail: {
+          userId: this.state.data.userId,
+          username: this.state.data.username
+        }
+      }));
     }
   }
 
   _deleteBio(e) {
 
-    if (e.detail !== this.state.data.username) {
-        this.state.alerts = e.detail + ' deleted their bio!';
+    if (e.detail.userId !== this.state.data.userId) {
+        this.state.alerts = e.detail.username + ' deleted their bio!';
         this.setState(this.state);
     }
   }
@@ -64,7 +69,13 @@ class CardComponent extends React.Component {
     this.setState(this.state);
 
     if (this.state.evented) {
-      let likeEvent = { detail: {username: this.state.data.username, likes: this.state.likes} };
+      let likeEvent = {
+        detail: {
+          userId: this.state.data.userId,
+          username: this.state.data.username,
+          likes: this.state.likes
+        }
+      };
       this.state.evented.dispatchEvent(new CustomEvent(this.LIKE_EVENT, likeEvent));
     }
   }
@@ -76,7 +87,13 @@ class CardComponent extends React.Component {
 
     if (this.state.evented) {
       // simply event out as there are a myriad of use cases for handling this event (e.g. private or moderated comments)
-      let commentEvent = { detail: {username: this.state.data.username, comment: this.state.currentComment} };
+      let commentEvent = {
+        detail: {
+          userId: this.state.data.userId,
+          username: this.state.data.username,
+          comment: this.state.currentComment
+        }
+      };
       this.state.evented.dispatchEvent(new CustomEvent(this.SHARE_COMMENT_EVENT, commentEvent));
       window.console && console.log(commentEvent);
     }
