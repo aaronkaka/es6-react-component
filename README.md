@@ -41,7 +41,7 @@ The dev.card-component.js is automagically hoisted into the build directory for 
 
 ### Hot Reload
 
-Hot module replacement is activated, so that any saved change to the watched source automatically reloads the page.
+Hot module replacement is activated; so for the watched source, changes are automatically reloaded.
 
 ### Test
 
