@@ -57,15 +57,15 @@ The component can be consumed from either an ES5 or ES6 application.
 
 Build the transpiled, minified version of this component to build/dist.card-component.js:
 
-    > webpack -p
+    > npm run build
     
 Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
-    detail: '.container'
+    { detail: '.container' }
     
 To remove a card instance, event `destroyCard` with the DOM element ID, e.g.
 
-    detail: 'div2'
+    { detail: 'div2' }
 
 ### How do I consume the npm module?
 

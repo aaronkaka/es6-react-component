@@ -7,12 +7,14 @@
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
     "test": "jest",
     "lint": "DEBUG=eslint:cli-engine ./node_modules/.bin/eslint ./react_components/**",
-    "build": "webpack && jest --coverage"
+    "build": "webpack -p && jest --coverage"
   },
   "jest": {
     "scriptPreprocessor": "./node_modules/babel-jest",
     "unmockedModulePathPatterns": [
-      "./node_modules/react"
+      "react",
+      "react-dom",
+      "react-addons-test-utils"
     ]
   },
   "author": "Aaron Kaka <aaron.kaka@gmail.com>",
