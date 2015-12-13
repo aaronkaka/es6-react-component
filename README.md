@@ -6,7 +6,8 @@
 
 ## Goals
 
-Card web component written with ES6 modules, classes, and syntax using React to achieve the following goals:
+Card web component written with ES6 modules, classes, and syntax (transpiled by Babel 6) using React to achieve the 
+following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
 - Self-contained; no knowledge of React required to consume the component
@@ -19,11 +20,11 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 ## Tool Chain
 
-Install [NodeJS](http://nodejs.org/download/). This installs npm.
+- [node.js](http://nodejs.org) (v4 is required)
+- [webpack](https://webpack.github.io/) (`npm install -g webpack`)
 
-Make the webpack command available:
-
-    npm install webpack -g
+Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
+to manage them.
 
 ## Playtime
 
@@ -35,9 +36,7 @@ After cloning the repo:
     npm install
     npm run dev
 
-Once the above is complete, open a browser tab to **localhost:8080**.
-
-The dev.card-component.js is automagically hoisted into the build directory for use.
+Once the above is complete, open a browser tab to **localhost:8080**, and dev.card-component.js is served from memory.
 
 ### Hot Reload
 

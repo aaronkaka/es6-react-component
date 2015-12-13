@@ -13,7 +13,13 @@ module.exports = {
     ],
     loaders: [
       {test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/},
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
+      {
+        test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
+        query: {
+          cacheDirectory: true,
+          presets: ['es2015', 'react']
+        }
+      },
       {test: /\.woff$/, loader: 'url?limit=100000', exclude: /node_modules/},
       {test: /\.eot$/, loader: 'url?limit=100000', exclude: /node_modules/},
       {test: /\.svg$/, loader: 'url?limit=100000', exclude: /node_modules/},
