@@ -6,8 +6,7 @@
 
 ## Goals
 
-Card web component written with ES6 modules, classes, and syntax (transpiled by Babel 6) using React to achieve the 
-following goals:
+Card web component written with ES6 modules, classes, and syntax using React to achieve the following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
 - Self-contained; no knowledge of React required to consume the component
@@ -18,10 +17,13 @@ following goals:
 [no IE] Uses the native CustomEvent constructor that no version of IE supports (MS Edge does!). This choice was made to 
 reduce complexity and encourage adherence to web standards - add the polyfill if needed.
 
-## Tool Chain
+## Modern Tool Chain
 
 - [node.js](http://nodejs.org) (v4 is required)
 - [webpack](https://webpack.github.io/) (`npm install -g webpack`)
+    - Processing of styles and icon
+    - Babel 6 for transpiling ES6 and JSX
+    - ESLint
 
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
