@@ -1,6 +1,6 @@
 # ECMAScript 6 React Component
 
-![Image](screenshot_mini.jpg?raw=true "screenshot")
+![Image](README_pic.jpg?raw=true "screenshot")
 
 [![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
 
