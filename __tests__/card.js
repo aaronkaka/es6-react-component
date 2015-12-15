@@ -1,9 +1,9 @@
 jest.dontMock('../react_components/Card.js');
 
-let React = require('react'),
-    ReactDOM = require('react-dom'),
-    Card = require('../react_components/Card'),
-    TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Card from '../react_components/Card';
+import TestUtils from 'react-addons-test-utils';
 
 describe('Card', function() {
 

@@ -1,8 +1,8 @@
 jest.dontMock('../react_components/Alert.js');
 
-let React = require('react'),
-    Alert = require('../react_components/Alert'),
-    TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import Alert from '../react_components/Alert';
+import TestUtils from 'react-addons-test-utils';
 
 describe('Alert', function() {
 

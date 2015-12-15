@@ -1,8 +1,8 @@
 jest.dontMock('../react_components/Avatar.js');
 
-let React = require('react'),
-    Avatar = require('../react_components/Avatar'),
-    TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import Avatar from '../react_components/Avatar';
+import TestUtils from 'react-addons-test-utils';
 
 describe('Avatar', function() {
 

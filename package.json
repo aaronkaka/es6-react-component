@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
     "test": "jest",
+    "cov": "jest --coverage",
     "lint": "DEBUG=eslint:cli-engine ./node_modules/.bin/eslint ./react_components/**",
-    "build": "webpack -p"
+    "build": "webpack -p && jest"
   },
   "jest": {
+    "testRunner": "./node_modules/jest-cli/src/testRunners/jasmine/jasmine2",
     "scriptPreprocessor": "./node_modules/babel-jest",
     "unmockedModulePathPatterns": [
       "react",
@@ -38,6 +40,7 @@
     "eslint": "~1.10.3",
     "eslint-loader": "~1.1.1",
     "file-loader": "~0.8.5",
+    "jest-cli": "~0.8.1",
     "react-addons-test-utils": "~0.14.3",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",
