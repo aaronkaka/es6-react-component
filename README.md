@@ -1,4 +1,4 @@
-# ECMAScript 6 React Component
+# ECMAScript 6 React Card Component
 
 ![Image](README_pic.jpg?raw=true "screenshot")
 
@@ -19,7 +19,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 ## Modern Tool Chain
 
-- [node.js](http://nodejs.org) (v4 is required)
+- [Node.js](http://nodejs.org) v4
 - [webpack](https://webpack.github.io/) (`npm install -g webpack`)
     - Processing of styles and icon
     - Babel 6 for transpiling ES6 and JSX
@@ -90,7 +90,13 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
       module: {
         loaders: [
           {test: /\.css$/, loader: 'style-loader!css-loader'},
-          {test: /\.js$/, loader: 'babel-loader'},
+          {
+            test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
+            query: {
+              cacheDirectory: true,
+              presets: ['es2015', 'react']
+            }
+          },
           {test: /\.woff$/, loader: 'url?limit=100000'},
           {test: /\.eot$/, loader: 'url?limit=100000'},
           {test: /\.svg$/, loader: 'url?limit=100000'},
