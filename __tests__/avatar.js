@@ -13,6 +13,6 @@ describe('Avatar', function() {
   let item = TestUtils.findRenderedDOMComponentWithTag(AvatarElement, 'img');
 
   it('sets the image source', function () {
-    expect(item.props.src).toEqual('http://placehold.it/150x150');
+    expect(item.src).toEqual('http://placehold.it/150x150');
   });
 });
