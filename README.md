@@ -19,7 +19,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 ## Modern Tool Chain
 
-- [Node.js](http://nodejs.org) v4
+- [Node.js](http://nodejs.org) v4+
 - [webpack](https://webpack.github.io/) (`npm install -g webpack`)
     - Processing of styles and icon
     - Babel 6 for transpiling ES6 and JSX

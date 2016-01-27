@@ -9,6 +9,7 @@ describe('Card', function() {
 
   let targetData = {
         targetElem: 'div4',
+        userId: 'abc123',
         username: 'outsider.abcdefghijklmnopqrstuvwxyz',
         bio: 'This card does not belong to the evented group of cards.'
       },
