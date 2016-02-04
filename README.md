@@ -17,7 +17,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 ## Toolchain
 
-- [Node.js](http://nodejs.org) v4+
+- [Node.js](http://nodejs.org) `v4+`
 - [webpack](https://webpack.github.io/) (`npm install -g webpack`)
     - Bundle script, styles and icon
     - Babel 6 transpiles ES6 and JSX
@@ -40,7 +40,8 @@ Once the above is complete, open a browser tab to **localhost:8080**, and dev.ca
 
 ### Hot Reload
 
-Hot module replacement is activated; so for the watched source, changes are automatically reloaded.
+Hot module replacement is activated in the webpack dev server; changes to react_components are automatically reloaded in
+ the browser.
 
 ### Test
 

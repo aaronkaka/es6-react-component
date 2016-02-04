@@ -8,7 +8,7 @@
     "test": "jest",
     "cov": "jest --coverage",
     "lint": "eslint ./react_components/** ./__tests__/**",
-    "build": "webpack -p && jest"
+    "build": "webpack -p && npm test"
   },
   "jest": {
     "testRunner": "./node_modules/jest-cli/src/testRunners/jasmine/jasmine2",

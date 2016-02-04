@@ -26,8 +26,8 @@ export default function cardstrap(containerType) {
         console.info(targetData);
 
         ReactDOM.render(
-          <CardComponent data={targetData} key={keyId} />,
-          document.getElementById(targetElement));
+          <CardComponent data={targetData} key={keyId} />, document.getElementById(targetElement)
+        );
       });
   });
 }
