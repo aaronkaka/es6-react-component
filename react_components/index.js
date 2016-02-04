@@ -1,6 +1,6 @@
 // bundled component styling
-import styles from '../css/card.css';
-import fontStyles from '../css/fontello.css';
+import '../css/card.css';
+import '../css/fontello.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,18 +9,18 @@ import CardComponent from './Card';
 export default function cardstrap(containerType) {
 
   // Convention used is that cards go into container-styled divs
-  let containers = document.querySelectorAll(containerType);
+  const containers = document.querySelectorAll(containerType);
   // Be advised that containers is a NodeList, not an Array
 
   // Listen for card instance initialization in each container
   [].map.call(containers, container => {
 
-      document.getElementById(container.id)
+    document.getElementById(container.id)
       .addEventListener('initCard', e => {
 
-        let targetData = e.detail,
-            targetElement = e.detail.targetElem,
-            keyId = e.detail.userId;
+        const targetData = e.detail;
+        const targetElement = e.detail.targetElem;
+        const keyId = e.detail.userId;
 
         console.info(`New Event ${e.type} for ${targetElement}`);
         console.info(targetData);

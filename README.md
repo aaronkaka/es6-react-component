@@ -1,12 +1,10 @@
-# ECMAScript 6 React Card Component
+# ECMAScript 6 React Card Component [![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
 
 ![Image](README_pic.jpg?raw=true "screenshot")
 
-[![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
-
 ## Goals
 
-Card web component written with ES6 modules, classes, and syntax using React to achieve the following goals:
+Card web component written with ES6 modules, classes, and syntax using [React](http://facebook.github.io/react) to achieve the following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
 - Self-contained; no knowledge of React required to consume the component
@@ -17,12 +15,12 @@ Card web component written with ES6 modules, classes, and syntax using React to 
 [no IE] Uses the native CustomEvent constructor that no version of IE supports (MS Edge does!). This choice was made to 
 reduce complexity and encourage adherence to web standards - add the polyfill if needed.
 
-## Modern Tool Chain
+## Toolchain
 
 - [Node.js](http://nodejs.org) v4+
 - [webpack](https://webpack.github.io/) (`npm install -g webpack`)
-    - Processing of styles and icon
-    - Babel 6 for transpiling ES6 and JSX
+    - Bundle script, styles and icon
+    - Babel 6 transpiles ES6 and JSX
     - ESLint
 
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 

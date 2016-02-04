@@ -1,3 +1,5 @@
+/* global jest describe it expect */
+
 jest.dontMock('../react_components/Alert.js');
 
 import React from 'react';
@@ -6,11 +8,11 @@ import TestUtils from 'react-addons-test-utils';
 
 describe('Alert', function() {
 
-  let AlertElement = TestUtils.renderIntoDocument(
+  const AlertElement = TestUtils.renderIntoDocument(
     <Alert text={'Somebody deleted their bio!'} />
   );
 
-  let item = TestUtils.findRenderedDOMComponentWithClass(AlertElement, 'alert-info');
+  const item = TestUtils.findRenderedDOMComponentWithClass(AlertElement, 'alert-info');
 
   it('renders the alert', function () {
     expect(item.textContent).toEqual('×Somebody deleted their bio!');

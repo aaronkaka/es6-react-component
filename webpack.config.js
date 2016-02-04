@@ -10,12 +10,12 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/}
+      {test: /\.js$/, loader: 'eslint', exclude: /node_modules/}
     ],
     loaders: [
       {test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/},
       {
-        test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
+        test: /\.js$/, loader: 'babel', exclude: /node_modules/,
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react']

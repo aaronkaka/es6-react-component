@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
     "test": "jest",
     "cov": "jest --coverage",
-    "lint": "DEBUG=eslint:cli-engine ./node_modules/.bin/eslint ./react_components/**",
+    "lint": "eslint ./react_components/** ./__tests__/**",
     "build": "webpack -p && jest"
   },
   "jest": {
@@ -39,6 +39,7 @@
     "css-loader": "~0.23.0",
     "eslint": "~1.10.3",
     "eslint-loader": "~1.1.1",
+    "eslint-plugin-react": "~3.16.1",
     "file-loader": "~0.8.5",
     "jest-cli": "~0.8.2",
     "react-addons-test-utils": "~0.14.3",

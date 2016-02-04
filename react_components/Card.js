@@ -54,8 +54,8 @@ class CardComponent extends React.Component {
   _deleteBio(e) {
 
     if (e.detail.userId !== this.state.data.userId) {
-        this.state.alerts = e.detail.username + ' deleted their bio!';
-        this.setState(this.state);
+      this.state.alerts = e.detail.username + ' deleted their bio!';
+      this.setState(this.state);
     }
   }
 
@@ -69,7 +69,7 @@ class CardComponent extends React.Component {
     this.setState(this.state);
 
     if (this.state.evented) {
-      let likeEvent = {
+      const likeEvent = {
         detail: {
           userId: this.state.data.userId,
           username: this.state.data.username,
@@ -87,7 +87,7 @@ class CardComponent extends React.Component {
 
     if (this.state.evented) {
       // simply event out as there are a myriad of use cases for handling this event (e.g. private or moderated comments)
-      let commentEvent = {
+      const commentEvent = {
         detail: {
           userId: this.state.data.userId,
           username: this.state.data.username,
@@ -95,7 +95,6 @@ class CardComponent extends React.Component {
         }
       };
       this.state.evented.dispatchEvent(new CustomEvent(this.SHARE_COMMENT_EVENT, commentEvent));
-      window.console && console.log(commentEvent);
     }
   }
 
@@ -119,7 +118,7 @@ class CardComponent extends React.Component {
 
   render() {
 
-    let data = this.state.data;
+    const data = this.state.data;
 
     return (
       <div className="panel panel-default cardComponent">
@@ -159,13 +158,13 @@ class CardComponent extends React.Component {
 
 CardComponent.propTypes = {
   data: PropTypes.shape({
-      eventedElem: PropTypes.string,
-      targetElem: PropTypes.string.isRequired,
-      userId: PropTypes.string.isRequired,
-      username: PropTypes.string.isRequired,
-      bio: PropTypes.string,
-      avatar: PropTypes.string
-    })
+    eventedElem: PropTypes.string,
+    targetElem: PropTypes.string.isRequired,
+    userId: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    bio: PropTypes.string,
+    avatar: PropTypes.string
+  })
 };
 
 export default CardComponent;
