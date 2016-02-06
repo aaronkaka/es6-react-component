@@ -37,7 +37,7 @@ After cloning the repo:
     npm install
     npm run dev
 
-Once bundling is complete, open a browser tab to **localhost:8080**, and dev.card-component.js is served from memory.
+Once bundling is complete, open a browser tab to **localhost:8080**, and dev.card-component.js is served in memory.
 
 ### Hot Reload
 
@@ -48,18 +48,18 @@ Hot module replacement is activated in the webpack dev server; changes to react_
 
 The project is wired to unit test with the Jest framework.
 
-    npm test
+    npm test    
 
-## Consume
+## How do I consume the npm module?
 
-The component can be consumed from either an ES5 or ES6 application.
+Do as described in this section from the consuming application:
      
-### Script Include
+    > npm i es6-react-component --save
 
-Build the transpiled, minified version of this component to build/dist.card-component.js:
+### Include Script
 
-    > npm run build
-    
+The transpiled, minified bundle will be available as /node_modules/es6-react-component/build/dist.card-component.js.
+
 Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
     { detail: '.container' }
@@ -68,18 +68,15 @@ To remove a card instance, event `destroyCard` with the DOM element ID, e.g.
 
     { detail: 'div2' }
 
-### How do I consume the npm module?
-
-Do as described in this section from the consuming application:
-     
-    > npm i es6-react-component --save
+### ...or Build in your App
 
 Example javascript:
 
     var cardstrap = require('es6-react-component').default;
     cardstrap('.container');
     
-Then build the required bundle with webpack, similar to this webpack.config.js:
+Then build the required bundle with webpack (requires installation of correct dependencies, loaders, and config), 
+similar to this webpack.config.js:
 
     module.exports = {
       entry: ['./eventing.js'],
@@ -91,7 +88,7 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
         loaders: [
           {test: /\.css$/, loader: 'style-loader!css-loader'},
           {
-            test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
+            test: /\.js$/, loader: 'babel', exclude: /node_modules/,
             query: {
               cacheDirectory: true,
               presets: ['es2015', 'react']
@@ -104,8 +101,8 @@ Then build the required bundle with webpack, similar to this webpack.config.js:
         ]
       }
     };
-    
-### Events
+        
+### Card Instances
 
 After the card component is bootstrapped for a container, each instance is initialized with the `initCard` event:
 
@@ -121,7 +118,7 @@ After the card component is bootstrapped for a container, each instance is initi
         })
       );
 
-The following events and data are emitted by this component.
+The following events and data are emitted by each card instance.
 
 <table>
     <tr>

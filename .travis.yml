@@ -4,4 +4,4 @@ node_js:
     - "5.5"
     - "4.2"
 
-script: npm run build
+script: npm run ci
