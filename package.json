@@ -9,7 +9,7 @@
     "lint": "eslint ./react_components/** ./__tests__/**",
     "ci": "webpack && npm test",
     "build": "webpack -p",
-    "prepublish": "npm run build",
+    "release": "node ./scripts/release.js",
     "clean": "rm build/*.js && rm -rf coverage"
   },
   "jest": {
@@ -45,6 +45,7 @@
     "file-loader": "~0.8.5",
     "jest-cli": "~0.8.2",
     "react-addons-test-utils": "~0.14.3",
+    "semver": "~5.1.0",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.9",
