@@ -24,7 +24,7 @@ function init() {
         userId: "3c832cbae883f988cfb877f4322d137c",
         username: "aaron.kaka",
         bio: "This is Aaron's bio.",
-        avatar: "images/avatar.jpg"
+        avatar: "images/avatar.png"
       }
     })
   );
