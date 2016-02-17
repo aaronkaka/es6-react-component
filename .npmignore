@@ -6,8 +6,8 @@ index.html
 .idea
 webpack.config.js
 __tests__
-.travis.yml
 coverage
+.travis.yml
 firebase.json
 .eslintrc
 .babelrc
