@@ -1,3 +1,6 @@
+// npm script
+// ES6 Modules support still in progress for the V8 engine, hence using 'require' here
+
 const exec = require('./exec');
 const pkg = require('../package.json');
 const currentVersion = pkg.version;
@@ -8,17 +11,15 @@ const stdin = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
-function syncRemote(branchName, nextVersion) {
+const syncRemote = (branchName, nextVersion) => {
   exec(`git push origin ${branchName}`);
   exec(`git push --tags`);
   console.log(`Synced local '${branchName}' with remote as ${nextVersion}`);
-}
-
-function exitFailure(message) {
+};
+const exitFailure = (message) => {
   console.error(message);
   process.exit(1);
-}
+};
 
 if (branchName !== 'master') {
   exitFailure('You must be on the master branch to run this script.');
