@@ -1,4 +1,3 @@
-// npm script
 // ES6 Modules support still in progress for the V8 engine, hence using 'require' here
 
 const execSync = require('child_process').execSync;

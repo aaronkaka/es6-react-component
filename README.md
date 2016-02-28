@@ -37,7 +37,7 @@ After cloning the repo:
     npm install
     npm run dev
 
-Once bundling is complete, open a browser tab to **localhost:8080**, and dev.card-component.js is served in memory.
+Once bundling is complete, open a browser tab to **localhost:8080/demo**, and dev.card-component.js is served in memory.
 
 ### Hot Reload
 

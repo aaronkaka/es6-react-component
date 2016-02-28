@@ -1,4 +1,3 @@
-// npm script
 // ES6 Modules support still in progress for the V8 engine, hence using 'require' here
 
 const exec = require('./exec');
@@ -28,7 +27,7 @@ if (branchName !== 'master') {
 stdin.question(`Next version (current is ${currentVersion})? `, (nextVersion) => {
 
   if (!semver.valid(nextVersion)) {
-    exitFailure(`Version '${nextVersion}' is not valid: it must be a valid semantic version. See http://semver.org/.`);
+    exitFailure(`Version '${nextVersion}' is not valid: it must be semver-compliant. See http://semver.org/`);
   }
 
   if (!semver.gt(nextVersion, currentVersion)) {

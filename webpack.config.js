@@ -1,13 +1,14 @@
 // [name] under the output section denotes the entry prop names
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './react_components/index.js'],
+   dev: ['webpack/hot/dev-server', './react_components/index.js', './demo/demo-scriptinclude.js'],
    dist: ['./react_components/index.js']
   },
   output: {
     path: './',
     filename: 'build/[name].card-component.js'
   },
+  contentBase: "./demo",
   module: {
     preLoaders: [
       {test: /\.js$/, loader: 'eslint', exclude: /node_modules/}
