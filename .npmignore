@@ -1,8 +1,7 @@
 build/dev.card-component.js
 build/.gitkeep
 images
-scripts
-index.html
+npm_scripts
 .idea
 webpack.config.js
 __tests__
@@ -11,3 +10,4 @@ coverage
 firebase.json
 .eslintrc
 .babelrc
+demo
