@@ -1,6 +1,5 @@
 build/dev.card-component.js
 build/.gitkeep
-images
 npm_scripts
 .idea
 webpack.config.js

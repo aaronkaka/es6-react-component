@@ -21,7 +21,7 @@ function init() {
       userId: '3c832cbae883f988cfb877f4322d137c',
       username: 'aaron.kaka',
       bio: 'This is Aaron\'s bio.',
-      avatar: '../images/avatar.png'
+      avatar: 'images/avatar.png'
     }
   }));
 
@@ -32,7 +32,7 @@ function init() {
       userId: 'c685a8ed331c70a47dea8812da69c1bd',
       username: 'joe.schmo',
       bio: 'This is Joe\'s bio.',
-      avatar: '../images/wired.jpg'
+      avatar: 'images/wired.jpg'
     }
   }));
 
@@ -43,7 +43,7 @@ function init() {
       userId: '40568a02136514ee93b6847a854ede22',
       username: 'suzie.q',
       bio: 'This is Suzie\'s bio.',
-      avatar: '../images/suzieq.jpg'
+      avatar: 'images/suzieq.jpg'
     }
   }));
 
