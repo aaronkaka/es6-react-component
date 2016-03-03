@@ -5,6 +5,16 @@ import '../css/fontello.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CardComponent from './Card';
+import {addLocaleData, IntlProvider} from 'react-intl';
+import frLocaleData from 'react-intl/lib/locale-data/fr'
+import enLocaleData from 'react-intl/lib/locale-data/en'
+
+addLocaleData(enLocaleData);
+addLocaleData(frLocaleData);
+
+const enJson = require('json!../translations/en-US.json');
+const frJson = require('json!../translations/fr.json');
+
 
 export default function cardstrap(containerType) {
 
@@ -25,8 +35,18 @@ export default function cardstrap(containerType) {
         console.info(`New Event ${e.type} for ${targetElement}`);
         console.info(targetData);
 
+        const messages = {
+          'en-US' : enJson,
+          'fr' : frJson
+        };
+
+        const locale = 'fr';
+
         ReactDOM.render(
-          <CardComponent data={targetData} key={keyId} />, document.getElementById(targetElement)
+            <IntlProvider locale={locale} messages={messages[locale]}>
+              <CardComponent data={targetData} key={keyId} />
+            </IntlProvider>,
+            document.getElementById(targetElement)
         );
       });
   });

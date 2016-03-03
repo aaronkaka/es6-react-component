@@ -3,6 +3,22 @@ import Avatar from './Avatar';
 import Bio from './Bio';
 import Alert from './Alert';
 
+import {FormattedMessage, intlShape, injectIntl, defineMessages} from 'react-intl';
+
+const messages = defineMessages({
+  commentPlaceholderText: {
+    id: 'comment-placeholder-text',
+    defaultMessage: 'Add a comment...',
+    description : 'Comment message'
+  },
+  deleteBioText : {
+    id: 'delete-bio',
+    description: 'Delete Bio Text',
+    defaultMessage: 'Delete bio'
+  }
+});
+
+
 class CardComponent extends React.Component {
 
   constructor(props) {
@@ -118,10 +134,18 @@ class CardComponent extends React.Component {
 
   render() {
 
+    const {formatMessage} = this.props.intl;
     const data = this.state.data;
 
     return (
       <div className="panel panel-default cardComponent">
+
+          <FormattedMessage
+              id="some.message"
+              description="Welcome greeting to the user"
+              defaultMessage="Hello! How are you today?"
+              />
+
          <div className="panel-heading cardComponent">
            <h4 className="cardComponent">{this.state.usernameDisplay}
             <a href="#"> <span className="badge">{this.state.likeDisplay}</span></a>
@@ -133,7 +157,9 @@ class CardComponent extends React.Component {
             <hr />
             <Bio text={data.bio} />
             <hr className="cardComponent" />
-            <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>Delete bio</button>
+            <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>
+                {formatMessage(messages.deleteBioText)}
+            </button>
             <br /><br />
             <Alert text={this.state.alerts} />
 
@@ -145,7 +171,7 @@ class CardComponent extends React.Component {
                     <i className="icon-export-1" />
                   </button>
                 </div>
-                <input type="text" className="form-control" placeholder="Add a comment..." onChange={this._commentChange} />
+                <input type="text" className="form-control" placeholder={formatMessage(messages.commentPlaceholderText)}  onChange={this._commentChange} />
               </div>
             </form>
 
@@ -157,6 +183,7 @@ class CardComponent extends React.Component {
 }
 
 CardComponent.propTypes = {
+  intl: intlShape.isRequired,
   data: PropTypes.shape({
     eventedElem: PropTypes.string,
     targetElem: PropTypes.string.isRequired,
@@ -167,4 +194,4 @@ CardComponent.propTypes = {
   })
 };
 
-export default CardComponent;
+export default injectIntl(CardComponent);
