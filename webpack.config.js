@@ -14,12 +14,13 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'eslint',
-        exclude: /node_modules/}
+        exclude: /node_modules/
+      }
     ],
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css',
+        loader: 'style!css', // CSS is turned into JavaScript with css loader, then embedded as styles using style loader
         exclude: /node_modules/
       },
       {
