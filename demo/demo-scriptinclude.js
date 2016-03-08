@@ -10,8 +10,16 @@ function init() {
   foucTarget && (foucTarget.className = '');
 
   // Add the card container listeners, using the necessary event trigger
-  document.body.dispatchEvent(new CustomEvent('cardstrap', { detail: '.container'}));
+  document.body.dispatchEvent(new CustomEvent('cardstrap', {
+    detail: '.container'
+  }));
 
+  // Listen for any events coming out of evented components
+  eventedElement.addEventListener('card-comment', function(e) {
+    console.info(`${e.detail.username} says "${e.detail.comment}"`);
+  });
+
+  // Initialize the card instances
   // Data in detail objects could come from a service endpoint
 
   eventedElement.dispatchEvent(new CustomEvent('initCard', {
