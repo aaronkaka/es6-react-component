@@ -139,7 +139,6 @@ class CardComponent extends React.Component {
 
     return (
       <div className="panel panel-default cardComponent">
-
           <FormattedMessage
               id="some.message"
               description="Welcome greeting to the user"
@@ -166,7 +165,7 @@ class CardComponent extends React.Component {
             <form>
               <div className="input-group cardComponent">
                 <div className="input-group-btn cardComponent">
-                  <button ref="likeButton" className="btn btn-default cardComponent" onClick={this.like}>+1</button>
+                  <button ref="likeButton" className="btn btn-default cardComponent likeBut" onClick={this.like}>+1</button>
                   <button ref="shareCommentButton" className="btn btn-default cardComponent" onClick={this.shareComment}>
                     <i className="icon-export-1" />
                   </button>
