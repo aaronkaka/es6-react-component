@@ -19,8 +19,8 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 ## Toolchain
 
 - [Node.js](http://nodejs.org) `v4+`
-- [webpack](https://webpack.github.io/) (`npm install -g webpack`)
-    - Bundle components, styles and icon
+- [webpack](https://webpack.github.io/)
+    - Bundle javascript, styles and icon
     - Babel 6 transpiles ES6 and JSX
     - ESLint
 
