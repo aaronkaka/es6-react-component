@@ -2,7 +2,7 @@
 
 jest.dontMock('../react_components/Card.js');
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Card from '../react_components/Card';
 import TestUtils from 'react-addons-test-utils';
@@ -14,9 +14,6 @@ import {findWithType, findWithClass, findAllWithClass} from 'react-shallow-testu
 
 describe('Card', function() {
     const renderer = TestUtils.createRenderer();
-
-    console.log("RENDERER", renderer);
-    
     const messages = {
         'en-US' : {
             "some.message" : "Some Message",
