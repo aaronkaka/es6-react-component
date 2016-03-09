@@ -28,15 +28,15 @@ describe('Card', function() {
     const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
     const {intl} = intlProvider.getChildContext();
 
-  const targetData = {
-    targetElem: 'div4',
-    userId: 'abc123',
-    username: 'outsider.abcdefghijklmnopqrstuvwxyz',
-    bio: 'This card does not belong to the evented group of cards.'
-  };
+    const targetData = {
+      targetElem: 'div4',
+      userId: 'abc123',
+      username: 'outsider.abcdefghijklmnopqrstuvwxyz',
+      bio: 'This card does not belong to the evented group of cards.'
+    };
 
 
-    const CardElement = renderer.render(
+    renderer.render(
           <Card.WrappedComponent
               data={targetData}
               intl = {intl}
