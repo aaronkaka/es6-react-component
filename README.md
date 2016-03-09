@@ -19,8 +19,8 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 ## Toolchain
 
 - [Node.js](http://nodejs.org) `v4+`
-- [webpack](https://webpack.github.io/) (`npm install -g webpack`)
-    - Bundle components, styles and icon
+- [webpack](https://webpack.github.io/)
+    - Bundle javascript, styles and icon
     - Babel 6 transpiles ES6 and JSX
     - ESLint
 
@@ -94,10 +94,7 @@ similar to this webpack.config.js:
               presets: ['es2015', 'react']
             }
           },
-          {test: /\.woff$/, loader: 'url?limit=100000'},
-          {test: /\.eot$/, loader: 'url?limit=100000'},
-          {test: /\.svg$/, loader: 'url?limit=100000'},
-          {test: /\.ttf$/, loader: 'url?limit=100000'}
+          {test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/, loader: 'url?limit=100000'}
         ]
       }
     };

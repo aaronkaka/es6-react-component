@@ -8,24 +8,35 @@ module.exports = {
     path: './',
     filename: 'build/[name].card-component.js'
   },
-  contentBase: "./demo",
+  contentBase: "./demo", // for webpack dev server
   module: {
     preLoaders: [
-      {test: /\.js$/, loader: 'eslint', exclude: /node_modules/}
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
     ],
     loaders: [
-      {test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/},
       {
-        test: /\.js$/, loader: 'babel', exclude: /node_modules/,
+        test: /\.css$/,
+        loader: 'style!css', // CSS is turned into JavaScript with css loader, then embedded as styles using style loader
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/,
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react']
         }
       },
-      {test: /\.woff$/, loader: 'url?limit=100000', exclude: /node_modules/},
-      {test: /\.eot$/, loader: 'url?limit=100000', exclude: /node_modules/},
-      {test: /\.svg$/, loader: 'url?limit=100000', exclude: /node_modules/},
-      {test: /\.ttf$/, loader: 'url?limit=100000', exclude: /node_modules/}
+      {
+        test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/,
+        loader: 'url?limit=100000',
+        exclude: /node_modules/
+      }
     ]
   }
 };
