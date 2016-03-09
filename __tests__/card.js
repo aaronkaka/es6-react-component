@@ -15,6 +15,8 @@ import {findWithType, findWithClass, findAllWithClass} from 'react-shallow-testu
 describe('Card', function() {
     const renderer = TestUtils.createRenderer();
 
+    console.log("RENDERER", renderer);
+    
     const messages = {
         'en-US' : {
             "some.message" : "Some Message",
