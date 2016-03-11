@@ -38,7 +38,7 @@ describe('Card', function() {
     renderer.render(
           <Card.WrappedComponent
               data={targetData}
-              intl = {intl}
+              intl={intl}
               />
     );
 
@@ -59,7 +59,7 @@ describe('Card', function() {
   });
 
   it('increments and displays the like count', function () {
-    const likeButton = findWithClass(renderedTree, 'likeBut');
+    const likeButton = findWithClass(renderedTree, 'shallowRenderRef');
     likeButton.props.onClick({ preventDefault: () => {} });
     const renderedTree2 = renderer.getRenderOutput();
     const label2 = findWithType(renderedTree2, 'span');

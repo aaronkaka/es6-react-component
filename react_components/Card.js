@@ -2,8 +2,7 @@ import React, { PropTypes } from 'react';
 import Avatar from './Avatar';
 import Bio from './Bio';
 import Alert from './Alert';
-
-import {FormattedMessage, intlShape, injectIntl, defineMessages} from 'react-intl';
+import {intlShape, injectIntl, defineMessages} from 'react-intl';
 
 const messages = defineMessages({
   commentPlaceholderText: {
@@ -139,12 +138,6 @@ class CardComponent extends React.Component {
 
     return (
       <div className="panel panel-default cardComponent">
-          <FormattedMessage
-              id="some.message"
-              description="Welcome greeting to the user"
-              defaultMessage="Hello! How are you today?"
-              />
-
          <div className="panel-heading cardComponent">
            <h4 className="cardComponent">{this.state.usernameDisplay}
             <a href="#"> <span className="badge">{this.state.likeDisplay}</span></a>
@@ -165,7 +158,7 @@ class CardComponent extends React.Component {
             <form>
               <div className="input-group cardComponent">
                 <div className="input-group-btn cardComponent">
-                  <button ref="likeButton" className="btn btn-default cardComponent likeBut" onClick={this.like}>+1</button>
+                  <button ref="likeButton" className="btn btn-default cardComponent shallowRenderRef" onClick={this.like}>+1</button>
                   <button ref="shareCommentButton" className="btn btn-default cardComponent" onClick={this.shareComment}>
                     <i className="icon-export-1" />
                   </button>
@@ -193,4 +186,4 @@ CardComponent.propTypes = {
   })
 };
 
-export default injectIntl(CardComponent);
+export default injectIntl(CardComponent); // Doing this to access the formatMessage function in the context above.
