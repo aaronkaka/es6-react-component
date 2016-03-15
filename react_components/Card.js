@@ -2,6 +2,21 @@ import React, { PropTypes } from 'react';
 import Avatar from './Avatar';
 import Bio from './Bio';
 import Alert from './Alert';
+import {intlShape, injectIntl, defineMessages} from 'react-intl';
+
+const messages = defineMessages({
+  commentPlaceholderText: {
+    id: 'comment-placeholder-text',
+    defaultMessage: 'Add a comment...',
+    description : 'Comment message'
+  },
+  deleteBioText : {
+    id: 'delete-bio',
+    description: 'Delete Bio Text',
+    defaultMessage: 'Delete bio'
+  }
+});
+
 
 class CardComponent extends React.Component {
 
@@ -118,6 +133,7 @@ class CardComponent extends React.Component {
 
   render() {
 
+    const {formatMessage} = this.props.intl;
     const data = this.state.data;
 
     return (
@@ -133,19 +149,21 @@ class CardComponent extends React.Component {
             <hr />
             <Bio text={data.bio} />
             <hr className="cardComponent" />
-            <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>Delete bio</button>
+            <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>
+                {formatMessage(messages.deleteBioText)}
+            </button>
             <br /><br />
             <Alert text={this.state.alerts} />
 
             <form>
               <div className="input-group cardComponent">
                 <div className="input-group-btn cardComponent">
-                  <button ref="likeButton" className="btn btn-default cardComponent" onClick={this.like}>+1</button>
+                  <button ref="likeButton" className="btn btn-default cardComponent shallowRenderRef" onClick={this.like}>+1</button>
                   <button ref="shareCommentButton" className="btn btn-default cardComponent" onClick={this.shareComment}>
                     <i className="icon-export-1" />
                   </button>
                 </div>
-                <input type="text" className="form-control" placeholder="Add a comment..." onChange={this._commentChange} />
+                <input type="text" className="form-control" placeholder={formatMessage(messages.commentPlaceholderText)}  onChange={this._commentChange} />
               </div>
             </form>
 
@@ -157,6 +175,7 @@ class CardComponent extends React.Component {
 }
 
 CardComponent.propTypes = {
+  intl: intlShape.isRequired,
   data: PropTypes.shape({
     eventedElem: PropTypes.string,
     targetElem: PropTypes.string.isRequired,
@@ -167,4 +186,4 @@ CardComponent.propTypes = {
   })
 };
 
-export default CardComponent;
+export default injectIntl(CardComponent); // Doing this to access the formatMessage function in the context above.
