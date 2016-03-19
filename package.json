@@ -22,6 +22,12 @@
     ]
   },
   "author": "Aaron Kaka <aaron.kaka@gmail.com>",
+  "contributors": [
+    {
+      "name": "Deepak Bhagchandani",
+      "email": "deepak2510@gmail.com"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -29,7 +35,8 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-dom": "~0.14.3"
+    "react-dom": "~0.14.3",
+    "react-intl": "~2.0.0-rc-1"
   },
   "devDependencies": {
     "babel-core": "~6.3.17",
@@ -44,10 +51,9 @@
     "eslint-plugin-react": "~3.16.1",
     "file-loader": "~0.8.5",
     "jest-cli": "~0.8.2",
-    "json-loader": "^0.5.4",
+    "json-loader": "~0.5.4",
     "react-addons-test-utils": "~0.14.3",
-    "react-intl": "^2.0.0-beta-2",
-    "react-shallow-testutils": "^1.0.0",
+    "react-shallow-testutils": "~1.0.0",
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",

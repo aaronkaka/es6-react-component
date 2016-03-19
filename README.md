@@ -12,6 +12,7 @@ achieve the following goals:
 - No component API; event all interaction
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
 - Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
+- Internationalization using React Intl (thanks to @deepak2510)
 
 [no IE] Uses the native CustomEvent constructor that no version of IE supports (MS Edge does!). This choice was made to 
 reduce complexity and encourage adherence to web standards - add the polyfill if needed.
@@ -46,7 +47,7 @@ Hot module replacement is activated in the webpack dev server; changes to react_
 
 ### Test
 
-The project is wired to unit test with the Jest framework.
+The project is wired to unit test with the Jest framework and shallow rendering utils.
 
     npm test    
 
@@ -110,7 +111,8 @@ After the card component is bootstrapped for a container, each instance is initi
             userId: "c685a8ed331c70a47dea8812da69c1bd", // Required
             username: "joe.schmo",                      // Required
             bio: "This is Joe's bio.",
-            avatar: "images/wired.jpg"
+            avatar: "images/wired.jpg",
+            locale: "fr"
           }
         })
       );

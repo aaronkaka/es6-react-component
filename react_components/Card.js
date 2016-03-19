@@ -10,10 +10,15 @@ const messages = defineMessages({
     defaultMessage: 'Add a comment...',
     description : 'Comment message'
   },
-  deleteBioText : {
+  deleteBioText: {
     id: 'delete-bio',
     description: 'Delete Bio Text',
     defaultMessage: 'Delete bio'
+  },
+  deleteConfirm: {
+    id: 'delete-confirmation',
+    description: 'Delete Confirmation',
+    defaultMessage: '[deleted]'
   }
 });
 
@@ -54,7 +59,7 @@ class CardComponent extends React.Component {
 
   deleteBio() {
 
-    this.state.data.bio = '[deleted]';
+    this.state.data.bio = messages.deleteConfirm.defaultMessage;
     this.setState(this.state);
     if (this.state.evented) {
       this.state.evented.dispatchEvent(new CustomEvent(this.BIO_DELETED_EVENT, {
@@ -147,7 +152,7 @@ class CardComponent extends React.Component {
             <Avatar imgSrc={data.avatar || 'http://placehold.it/150x150'} />
             <div className="clearfix cardComponent"></div>
             <hr />
-            <Bio text={data.bio} />
+            <Bio text={data.bio === messages.deleteConfirm.defaultMessage ? formatMessage(messages.deleteConfirm) : data.bio} />
             <hr className="cardComponent" />
             <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>
                 {formatMessage(messages.deleteBioText)}
@@ -182,8 +187,9 @@ CardComponent.propTypes = {
     userId: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     bio: PropTypes.string,
-    avatar: PropTypes.string
+    avatar: PropTypes.string,
+    locale: PropTypes.string
   })
 };
 
-export default injectIntl(CardComponent); // Doing this to access the formatMessage function in the context above.
+export default injectIntl(CardComponent); // Inject this.props.intl into the component context

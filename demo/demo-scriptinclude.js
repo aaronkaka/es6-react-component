@@ -51,7 +51,8 @@ function init() {
       userId: '40568a02136514ee93b6847a854ede22',
       username: 'suzie.q',
       bio: 'This is Suzie\'s bio.',
-      avatar: 'images/suzieq.jpg'
+      avatar: 'images/suzieq.jpg',
+      locale: 'fr'
     }
   }));
 

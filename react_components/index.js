@@ -14,7 +14,6 @@ addLocaleData(frLocaleData);
 
 const enJson = require('json!../translations/en-US.json');
 const frJson = require('json!../translations/fr.json');
-
 const translations = {
   'en-US' : enJson,
   'fr' : frJson
@@ -35,13 +34,10 @@ export default function cardstrap(containerType) {
         const targetData = e.detail;
         const targetElement = e.detail.targetElem;
         const keyId = e.detail.userId;
+        const locale = e.detail.locale ? e.detail.locale : 'en';
 
         console.info(`New Event ${e.type} for ${targetElement}`);
         console.info(targetData);
-
-
-
-        const locale = 'fr';
 
         ReactDOM.render(
             <IntlProvider locale={locale} messages={translations[locale]}>
