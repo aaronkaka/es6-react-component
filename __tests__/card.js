@@ -7,43 +7,38 @@ import ReactDOM from 'react-dom';
 import Card from '../react_components/Card';
 import TestUtils from 'react-addons-test-utils';
 import {IntlProvider} from 'react-intl';
-import {findWithType, findWithClass, findAllWithClass} from 'react-shallow-testutils';
-
-
-//const enJson = require('json!translations/en-US.json');
+import {findWithType, findWithClass} from 'react-shallow-testutils';
 
 describe('Card', function() {
-    const renderer = TestUtils.createRenderer();
-    const messages = {
-        'en-US' : {
-            "some.message" : "Some Message",
-            "delete-bio" : "Delete bio",
-            "sample-text" : "Sample Text",
-            "comment-placeholder-text" : "Add a comment ..."
-        }
-    };
+  const renderer = TestUtils.createRenderer();
+  const messages = {
+    'en-US' : {
+      'delete-bio': 'Delete bio',
+      'comment-placeholder': 'Add a comment ...'
+    }
+  };
 
-    const locale = 'en-US';
-    const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
-    const {intl} = intlProvider.getChildContext();
+  const locale = 'en-US';
+  const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
+  const {intl} = intlProvider.getChildContext();
 
-    const targetData = {
-      targetElem: 'div4',
-      userId: 'abc123',
-      username: 'outsider.abcdefghijklmnopqrstuvwxyz',
-      bio: 'This card does not belong to the evented group of cards.'
-    };
+  const targetData = {
+    targetElem: 'div4',
+    userId: 'abc123',
+    username: 'outsider.abcdefghijklmnopqrstuvwxyz',
+    bio: 'This card does not belong to the evented group of cards.'
+  };
 
 
-    renderer.render(
-          <Card.WrappedComponent
-              data={targetData}
-              intl={intl}
-              />
-    );
+  renderer.render(
+        <Card.WrappedComponent
+            data={targetData}
+            intl={intl}
+        />
+  );
 
-    const renderedTree = renderer.getRenderOutput();
-    const label = findWithType(renderedTree, 'span');
+  const renderedTree = renderer.getRenderOutput();
+  const label = findWithType(renderedTree, 'span');
 
   it('creates the card component instance', function () {
     expect(renderedTree).toBeDefined();

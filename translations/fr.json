@@ -1,5 +1,5 @@
 {
   "delete-bio" : "supprimer bio",
-  "comment-placeholder-text" : "ajouter un commentaire ...",
+  "comment-placeholder" : "ajouter un commentaire ...",
   "delete-confirmation": "[supprimé]"
 }

@@ -5,12 +5,12 @@ import Alert from './Alert';
 import {intlShape, injectIntl, defineMessages} from 'react-intl';
 
 const messages = defineMessages({
-  commentPlaceholderText: {
-    id: 'comment-placeholder-text',
+  commentPlaceholder: {
+    id: 'comment-placeholder',
     description : 'placeholder for comment field',
     defaultMessage: 'Add a comment...'
   },
-  deleteBioText: {
+  deleteBio: {
     id: 'delete-bio',
     description: 'button text for deleting bio',
     defaultMessage: 'Delete bio'
@@ -155,7 +155,7 @@ class CardComponent extends React.Component {
             <Bio text={data.bio === messages.deleteConfirm.defaultMessage ? formatMessage(messages.deleteConfirm) : data.bio} />
             <hr className="cardComponent" />
             <button className="btn btn-danger cardComponent" onClick={this.deleteBio}>
-                {formatMessage(messages.deleteBioText)}
+                {formatMessage(messages.deleteBio)}
             </button>
             <br /><br />
             <Alert text={this.state.alerts} />
@@ -168,7 +168,7 @@ class CardComponent extends React.Component {
                     <i className="icon-export-1" />
                   </button>
                 </div>
-                <input type="text" className="form-control" placeholder={formatMessage(messages.commentPlaceholderText)}  onChange={this._commentChange} />
+                <input type="text" className="form-control" placeholder={formatMessage(messages.commentPlaceholder)}  onChange={this._commentChange} />
               </div>
             </form>
 
