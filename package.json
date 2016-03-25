@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors --no-info",
     "test": "jest --coverage",
     "lint": "eslint ./react_components/** ./__tests__/** ./demo/demo-scriptinclude.js",
-    "ci": "webpack && npm test",
+    "ci": "npm test && npm run build",
     "build": "webpack -p",
     "release": "node ./npm_scripts/release.js",
     "clean": "rm build/*.js && rm -rf coverage"
