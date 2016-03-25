@@ -33,6 +33,11 @@ module.exports = {
         }
       },
       {
+        test: /\.json$/,
+        loader: 'json',
+        exclude: /node_modules/
+      },
+      {
         test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/,
         loader: 'url?limit=100000',
         exclude: /node_modules/

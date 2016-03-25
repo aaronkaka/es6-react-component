@@ -1,7 +1,5 @@
 {
-  "some.message" : "Certains messages",
   "delete-bio" : "supprimer bio",
-  "sample-text" : "exemple de texte",
   "comment-placeholder-text" : "ajouter un commentaire ...",
   "delete-confirmation": "[supprimé]"
 }

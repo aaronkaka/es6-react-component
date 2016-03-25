@@ -7,17 +7,17 @@ import {intlShape, injectIntl, defineMessages} from 'react-intl';
 const messages = defineMessages({
   commentPlaceholderText: {
     id: 'comment-placeholder-text',
-    defaultMessage: 'Add a comment...',
-    description : 'Comment message'
+    description : 'placeholder for comment field',
+    defaultMessage: 'Add a comment...'
   },
   deleteBioText: {
     id: 'delete-bio',
-    description: 'Delete Bio Text',
+    description: 'button text for deleting bio',
     defaultMessage: 'Delete bio'
   },
   deleteConfirm: {
     id: 'delete-confirmation',
-    description: 'Delete Confirmation',
+    description: 'confirmation message that bio is deleted',
     defaultMessage: '[deleted]'
   }
 });

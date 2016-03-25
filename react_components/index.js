@@ -5,19 +5,14 @@ import '../css/fontello.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CardComponent from './Card';
+
 import {addLocaleData, IntlProvider} from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr'
-import enLocaleData from 'react-intl/locale-data/en'
-
-addLocaleData(enLocaleData);
-addLocaleData(frLocaleData);
-
-const enJson = require('json!../translations/en-US.json');
-const frJson = require('json!../translations/fr.json');
+import frJson from '../translations/fr.json';
 const translations = {
-  'en-US' : enJson,
   'fr' : frJson
 };
+addLocaleData(frLocaleData);
 
 export default function cardstrap(containerType) {
 
