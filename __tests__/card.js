@@ -5,19 +5,17 @@ jest.dontMock('../react_components/Card.js');
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Card from '../react_components/Card';
-import TestUtils from 'react-addons-test-utils';
 import {IntlProvider} from 'react-intl';
-import {findWithType, findWithClass} from 'react-shallow-testutils';
+import {shallow, mount, render} from 'enzyme';
 
 describe('Card', function() {
-  const renderer = TestUtils.createRenderer();
+
   const messages = {
     'en-US' : {
       'delete-bio': 'Delete bio',
       'comment-placeholder': 'Add a comment ...'
     }
   };
-
   const locale = 'en-US';
   const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
   const {intl} = intlProvider.getChildContext();
@@ -29,36 +27,34 @@ describe('Card', function() {
     bio: 'This card does not belong to the evented group of cards.'
   };
 
-
-  renderer.render(
+  const wrapper = shallow(
         <Card.WrappedComponent
             data={targetData}
             intl={intl}
         />
   );
 
-  const renderedTree = renderer.getRenderOutput();
-  const label = findWithType(renderedTree, 'span');
-
   it('creates the card component instance', function () {
-    expect(renderedTree).toBeDefined();
+    expect(wrapper).toBeDefined();
   });
 
   it('correctly displays the username', function () {
-    const usernameDisplay = findWithType(renderedTree, 'h4');
-    expect(usernameDisplay.props.children[0]).toEqual('outsider.abcdefghijklmnopqrstu'); // add spacer
+    const usernameDisplay = wrapper.find('h4').first().text();
+    expect(usernameDisplay).toEqual('outsider.abcdefghijklmnopqrstu '); // add space
   });
 
   it('initially has no like count displayed', function () {
-    expect(label.props.children.length).toEqual(0);
+    const label = wrapper.find('span');
+    expect(label.text()).toEqual('');
   });
 
   it('increments and displays the like count', function () {
-    const likeButton = findWithClass(renderedTree, 'shallowRenderRef');
-    likeButton.props.onClick({ preventDefault: () => {} });
-    const renderedTree2 = renderer.getRenderOutput();
-    const label2 = findWithType(renderedTree2, 'span');
-    expect(label2.props.children).toEqual('+1');
+
+    const likeButton = wrapper.find('.shallowRenderRef');
+    likeButton.simulate('click');
+
+    const label = wrapper.find('.badge');
+    expect(label.text()).toEqual('+1');
   });
 
 });

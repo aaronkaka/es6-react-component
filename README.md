@@ -47,7 +47,8 @@ Hot module replacement is activated in the webpack dev server; changes to react_
 
 ### Test
 
-The project is wired to unit test with the Jest framework and shallow rendering utils.
+The project is wired to unit test with the Jest framework and Enzyme, a JavaScript testing utility for React that makes 
+it easier to assert, manipulate, and traverse your component's output.
 
     npm test    
 

@@ -82,7 +82,9 @@ class CardComponent extends React.Component {
   like(e) {
 
     // don't refresh page on button press
-    e.preventDefault();
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
 
     this.state.likes++;
     this.state.likeDisplay = '+' + this.state.likes;
@@ -103,7 +105,9 @@ class CardComponent extends React.Component {
   shareComment(e) {
 
     // don't refresh page on button press
-    e.preventDefault();
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
 
     if (this.state.evented) {
       // simply event out as there are a myriad of use cases for handling this event (e.g. private or moderated comments)
