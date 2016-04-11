@@ -96,7 +96,8 @@ similar to this webpack.config.js:
               presets: ['es2015', 'react']
             }
           },
-          {test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/, loader: 'url?limit=100000'}
+          {test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/, loader: 'url?limit=100000'},
+          {test: /\.json$/, loader: 'json'}
         ]
       }
     };
