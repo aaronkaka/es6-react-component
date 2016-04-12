@@ -35,8 +35,6 @@
     "url": "https://github.com/aaronkaka/es6-react-component"
   },
   "dependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
     "react-intl": "~2.0.1"
   },
   "devDependencies": {
@@ -54,6 +52,8 @@
     "file-loader": "~0.8.5",
     "jest-cli": "~0.9.0",
     "json-loader": "~0.5.4",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",

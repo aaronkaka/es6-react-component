@@ -3,7 +3,6 @@
 jest.dontMock('../react_components/Card.js');
 
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import Card from '../react_components/Card';
 import {IntlProvider} from 'react-intl';
 import {shallow, mount, render} from 'enzyme';
