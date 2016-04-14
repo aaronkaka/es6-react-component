@@ -1,4 +1,4 @@
-build/dev.card-component.js
+build/dev*.js
 build/.gitkeep
 npm_scripts
 .idea
