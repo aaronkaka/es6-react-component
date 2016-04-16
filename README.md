@@ -122,7 +122,7 @@ After the card component is bootstrapped for a container, each instance is initi
             username: "joe.schmo",                      // Required
             bio: "This is Joe's bio.",
             avatar: "images/wired.jpg",
-            locale: "fr"
+            locale: "fr-CA"
           }
         })
       );

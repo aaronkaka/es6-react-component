@@ -52,7 +52,7 @@ function init() {
       username: 'suzie.q',
       bio: 'This is Suzie\'s bio.',
       avatar: 'images/suzieq.jpg',
-      locale: 'fr'
+      locale: 'fr-CA'
     }
   }));
 
