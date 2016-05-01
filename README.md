@@ -10,6 +10,7 @@ Card web component written with ES6 modules, classes, and syntax using [React](h
 achieve the following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
+- Enable all interaction to be evented
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
 - Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
 - Internationalization using React Intl (thanks to @deepak2510)
@@ -72,17 +73,13 @@ The transpiled, minified bundle will be available as /node_modules/es6-react-com
 Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
     { detail: '.container' }
-    
-To remove a card instance, event `destroyCard` with the DOM element ID, e.g.
-
-    { detail: 'div2' }
 
 ### ...or CommonJS
 
 Example javascript:
 
-    var cardstrap = require('es6-react-component').default;
-    cardstrap('.container'); // pass in your container element
+    var Cards = require('es6-react-component');
+    new Cards('.container'); // pass in your container element
     
 Then build the required bundle with webpack (requires installation of correct dependencies, loaders, and config), 
 similar to this webpack.config.js:
