@@ -29,6 +29,15 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
 
+## Polyfill.io Service
+
+Use the following [Intl.js](https://github.com/andyearnshaw/Intl.js/) polyfill for Safari, which is the only modern 
+browser to not yet implement the ECMAScript Internationalization API:
+
+```html
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=Intl.~locale.en,Intl.~locale.fr"></script>
+```
+
 ## Externalizing React
 
 In webpack, "externals" allows you to specify dependencies that are not resolved by webpack, but become dependencies of 
