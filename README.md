@@ -10,7 +10,6 @@ Card web component written with ES6 modules, classes, and syntax using [React](h
 achieve the following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
-- Event all interaction
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
 - Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
 - Internationalization using React Intl (thanks to @deepak2510)

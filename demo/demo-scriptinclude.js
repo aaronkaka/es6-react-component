@@ -1,4 +1,5 @@
-'use strict';
+import ReactDOM from 'react-dom';
+import Cards from '../react_components/index.js';
 
 function init() {
 
@@ -9,10 +10,8 @@ function init() {
   // Un-hide the page elements now that the DOM has fully rendered
   foucTarget && (foucTarget.className = '');
 
-  // Add the card container listeners, using the necessary event trigger
-  document.body.dispatchEvent(new CustomEvent('cardstrap', {
-    detail: '.container'
-  }));
+  // Add the card container listeners
+  new Cards('.container');
 
   // Listen for any events coming out of evented components
   eventedElement.addEventListener('card-comment', function(e) {
@@ -70,9 +69,9 @@ function init() {
 
   // Remove a card instance after some delay
   setTimeout(function() {
-    document.body.dispatchEvent(new CustomEvent('destroyCard', {
-      detail: 'div2'
-    }))
+    const unmountElement  = 'div2';
+    ReactDOM.unmountComponentAtNode(document.getElementById(unmountElement));
+    console.info(`Unmounted component instance at ${unmountElement}`);
   }, 2000);
 
 }
