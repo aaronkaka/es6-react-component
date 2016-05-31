@@ -5,6 +5,7 @@
   "main": "react_components/index.js",
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors --no-info",
+    "pretest": "npm run lint",
     "test": "jest",
     "pretest-cov": "npm run lint",
     "test-cov": "jest --coverage",
@@ -13,8 +14,7 @@
     "lint": "eslint ./react_components/**",
     "lint-all": "eslint react_components/** __tests__/** demo/demo-scriptinclude.js",
     "ci": "npm run test-cov && npm run build && npm run coveralls",
-    "release": "node ./npm_scripts/release.js",
-    "clean": "rm build/*.js && rimraf coverage"
+    "release": "node ./npm_scripts/release.js"
   },
   "jest": {
     "testRunner": "./node_modules/jest-cli/src/testRunners/jasmine/jasmine2",

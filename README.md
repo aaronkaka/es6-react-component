@@ -24,7 +24,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 - [webpack](https://webpack.github.io/)
     - Bundle javascript, styles and icon
     - Babel 6 transpiles ES6 and JSX
-    - ESLint
+    - ESLint as configured in .eslintrc
 
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
