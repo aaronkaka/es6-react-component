@@ -4,7 +4,7 @@
   "description": "Card component with bundled styling targeting Bootstrap 3, internationalization, and powered by React.",
   "main": "react_components/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --hot --progress --colors --no-info",
+    "dev": "webpack-dev-server --devtool source-map --hot --progress --colors --no-info",
     "pretest": "npm run lint",
     "test": "jest",
     "pretest-cov": "npm run lint",

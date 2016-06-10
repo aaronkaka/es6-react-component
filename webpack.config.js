@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: './',
     filename: 'build/[name].card-component.js',
-    libraryTarget: "umd"
+    libraryTarget: 'umd'
   },
   externals: [
     {
@@ -27,7 +27,7 @@ module.exports = {
       }
     }
   ],
-  contentBase: "./demo", // for webpack dev server
+  contentBase: './demo', // for webpack dev server
   module: {
     preLoaders: [
       {
