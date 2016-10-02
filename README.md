@@ -79,50 +79,21 @@ for additional React debugging support in Chrome dev tools under the "React" tab
 
 ## Usage
 
-Do as described in this section from the consuming application:
+From the consuming application:
      
     > npm i --save es6-react-component react@latest react-dom@latest
 
-### Drop in the Bundle...
-
 The transpiled, minified bundle will be available as /node_modules/es6-react-component/build/dist.card-component.js.
 
-Include it in the consuming page, then event `cardstrap` with the container type, e.g.
+Option 1: Include it in the consuming page, then event `cardstrap` with the container type, e.g.
 
     { detail: '.container' }
 
-### ...or Build
-
-Example JavaScript using CommonJS:
+Option 2: Use the direct API:
 
     var Cards = require('es6-react-component');
     new Cards('.container'); // pass in your container element
     
-Then build the required bundle with webpack (requires installation of correct dependencies, loaders, and config), 
-similar to this webpack.config.js:
-
-    module.exports = {
-      entry: ['./eventing.js'],
-      output: {
-        path: './',
-        filename: 'bundle.js'
-      },
-      module: {
-        loaders: [
-          {test: /\.css$/, loader: 'style-loader!css-loader'},
-          {
-            test: /\.js$/, loader: 'babel', exclude: /node_modules/,
-            query: {
-              cacheDirectory: true,
-              presets: ['es2015', 'react']
-            }
-          },
-          {test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/, loader: 'url?limit=100000'},
-          {test: /\.json$/, loader: 'json'}
-        ]
-      }
-    };
-        
 ### Card Instances
 
 After the card component is bootstrapped for a container, each instance is initialized with the `initCard` event:

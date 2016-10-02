@@ -1,7 +1,7 @@
 // [name] under the output section denotes the entry prop names
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './react_components/index.js', './demo/demo-scriptinclude.js'],
+   dev: ['webpack/hot/dev-server', './demo/demo.js'],
    dist: ['./react_components/index.js']
   },
   output: {

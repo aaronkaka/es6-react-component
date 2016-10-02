@@ -44,7 +44,7 @@ stdin.question(`Next version (current is ${currentVersion})? `, (nextVersion) =>
   // Ensure the build is generated
   exec('npm run build');
 
-  // Locally commit the version update in package.json (also, if present, npm-shrinkwrap.json) and create tag
+  // Locally commit the version update in package.json and create tag
   exec(`npm version ${nextVersion}`);
 
   syncRemote(branchName, nextVersion);
