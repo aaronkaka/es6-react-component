@@ -17,8 +17,13 @@ export default class Cards {
 
   constructor(containerType) {
 
+    this.containerType = containerType;
     addLocaleData(frLocaleData);
     this.init(containerType);
+  }
+
+  toString() {
+    return `Container Type: ${this.containerType}`;
   }
 
   init(containerType) {

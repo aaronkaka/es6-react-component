@@ -11,7 +11,8 @@ function init() {
   foucTarget && (foucTarget.className = '');
 
   // Add the card container listeners
-  new Cards('.container');
+  const cardContainer = new Cards('.container');
+  console.info(cardContainer.toString());
 
   // Listen for any events coming out of evented components
   eventedElement.addEventListener('card-comment', function(e) {
