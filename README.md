@@ -2,7 +2,7 @@
 
 ![Image](https://cloud.githubusercontent.com/assets/1950683/13100443/594fa604-d4fa-11e5-8042-77dc6b77280a.jpg?raw=true "screenshot")
 
-**React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.**
+**React and ReactDOM are external dependencies required to use this component.**
 
 ## Goals
 
@@ -10,7 +10,6 @@ Card web component written with ES6 modules, classes, and syntax using [React](h
 achieve the following goals:
 
 - Reusable and responsively-designed; just drop into DOM node
-- Event all interaction
 - External styling is bundled with and scoped to the component; targets Bootstrap 3
 - Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
 - Internationalization using React Intl (thanks to @deepak2510)
@@ -29,7 +28,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
 
-## Polyfill.io Service
+## Polyfill Service
 
 Use the following [Intl.js](https://github.com/andyearnshaw/Intl.js/) polyfill for Safari, which is the only modern 
 browser to not yet implement the ECMAScript Internationalization API:
