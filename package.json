@@ -1,6 +1,6 @@
 {
   "name": "es6-react-component",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "description": "Card component with bundled styling targeting Bootstrap 3, internationalization, and powered by React.",
   "main": "./build/dist.card-component.js",
   "scripts": {
