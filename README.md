@@ -88,7 +88,7 @@ Option 1: Include it in the consuming page, then event `cardstrap` with the cont
 
     { detail: '.container' }
 
-Option 2: Use the direct API, e.g.
+Option 2: Use the direct API, (e.g. consuming using CommonJS)
 
     var Cards = require('es6-react-component').default;
     var cardContainer = new Cards('.container'); // pass in your container element
