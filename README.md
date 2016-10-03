@@ -84,11 +84,11 @@ From the consuming application:
 
 The transpiled, minified bundle will be available as /node_modules/es6-react-component/build/dist.card-component.js.
 
-Eventing example: Include it in the consuming page, then event `cardstrap` with the container type, as in
+**Eventing** example: Include it in the consuming page, then event `cardstrap` with the container type, as in
 
     { detail: '.container' }
 
-Direct API example: (consuming using CommonJS)
+**Direct API** example: (consuming using CommonJS)
 
     var Cards = require('es6-react-component').default;
     var cardContainer = new Cards('.container'); // pass in your container element
