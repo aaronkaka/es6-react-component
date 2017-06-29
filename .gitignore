@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 coverage
 firebase.json
+demo/dev.card-component.js
+demo/dist.card-component.js
