@@ -70,7 +70,7 @@ it easier to assert, manipulate, and traverse your component's output.
 
 ### Debug
 
-Source maps are enabled for the webpack dev server. Using **Chrome dev tools** - open the "Sources" tab, navigate to 
+Source maps are enabled for the webpack dev server. Using Chrome dev tools - open the "Sources" tab, navigate to 
 `top/webpack://./`, and you will find the original source files for which you can set breakpoints in Chrome's debugger.
 
 Optionally, install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
