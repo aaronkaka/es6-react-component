@@ -19,8 +19,8 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 ## Toolchain
 
-- [Node.js](http://nodejs.org) v4+
-- [webpack](https://webpack.github.io/)
+- [Node.js](http://nodejs.org) v6+
+- [webpack](https://webpack.github.io/) v2
     - Bundle javascript, styles and icon
     - Babel 6 transpiles ES6 and JSX
     - ESLint as configured in .eslintrc
@@ -52,9 +52,9 @@ After cloning the repo:
 
     cd es6-react-component
     npm install
-    npm run dev
+    npm start
 
-Once bundling is complete, open a browser tab to **localhost:8080/demo**, and dev.card-component.js is served in memory.
+Once bundling is complete, open a browser tab to **localhost:8080/demo/**, and dev.card-component.js is served in memory.
 
 ### Hot Reload
 
@@ -80,19 +80,21 @@ for additional React debugging support in Chrome dev tools under the "React" tab
 
 From the consuming application:
      
-    > npm i --save es6-react-component react@latest react-dom@latest
+    > npm i --save es6-react-component
 
-The transpiled, minified bundle will be available as /node_modules/es6-react-component/build/dist.card-component.js.
-
-**Eventing** example: Include it in the consuming page, then event `cardstrap` with the container type, as in
+Eventing example: Include it in the consuming page, then event `cardstrap` with the container type, as in
 
     { detail: '.container' }
 
-**Direct API** example: (consuming using CommonJS)
+CommonJS example:
 
     var Cards = require('es6-react-component').default;
     var cardContainer = new Cards('.container'); // pass in your container element
-    console.log(cardContainer.toString());
+    
+ES2015 example:
+
+    import Cards from 'es6-react-component';
+    const cardContainer = new Cards('.container');
     
 ### Card Instances
 

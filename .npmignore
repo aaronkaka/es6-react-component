@@ -1,5 +1,3 @@
-build/dev*.js
-build/.gitkeep
 npm_scripts
 .idea
 webpack.config.js
@@ -9,7 +7,9 @@ coverage
 firebase.json
 .eslintrc
 .babelrc
-demo
+demo/demo.js
+demo/dev.card-component.js
+demo/index.html
 react_components
 css
 translations
