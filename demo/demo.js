@@ -29,7 +29,7 @@ function init() {
       userId: '3c832cbae883f988cfb877f4322d137c',
       username: 'aaron.kaka',
       bio: 'This is Aaron\'s bio.',
-      avatar: 'images/avatar.png'
+      avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png'
     }
   }));
 
@@ -40,7 +40,7 @@ function init() {
       userId: 'c685a8ed331c70a47dea8812da69c1bd',
       username: 'joe.schmo',
       bio: 'This is Joe\'s bio.',
-      avatar: 'images/wired.jpg'
+      avatar: 'https://api.adorable.io/avatars/face/eyes4/nose3/mouth7/8e8895'
     }
   }));
 
@@ -51,7 +51,7 @@ function init() {
       userId: '40568a02136514ee93b6847a854ede22',
       username: 'suzie.q',
       bio: 'This is Suzie\'s bio.',
-      avatar: 'images/suzieq.jpg',
+      avatar: 'https://api.adorable.io/avatars/285/abght@adorable.io.png',
       locale: 'fr-CA'
     }
   }));
@@ -63,8 +63,8 @@ function init() {
       targetElem: 'div4',
       userId: '9e9fdb4e7377b80e7ce8c10c57db1676',
       username: 'outsider.card',
-      bio: 'This card does not belong to the evented group of cards.'
-      // NO avatar
+      bio: 'This card does not belong to the evented group of cards.',
+      avatar: 'https://api.adorable.io/avatars/285/abgzht@adorable.io.png'
     }
   }));
 
