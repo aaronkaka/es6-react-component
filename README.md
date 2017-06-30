@@ -2,8 +2,6 @@
 
 ![Image](https://cloud.githubusercontent.com/assets/1950683/13100443/594fa604-d4fa-11e5-8042-77dc6b77280a.jpg?raw=true "screenshot")
 
-**React and ReactDOM are external dependencies required to use this component.**
-
 ## Goals
 
 Card web component written with ES6 modules, classes, and syntax using [React](http://facebook.github.io/react) to 
@@ -21,7 +19,7 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 
 - [Node.js](http://nodejs.org) v6+
 - [webpack](https://webpack.github.io/) v2
-    - Bundle javascript, styles and icon
+    - Bundle javascript, styles and icons
     - Babel 6 transpiles ES6 and JSX
     - ESLint as configured in .eslintrc
 
@@ -77,6 +75,8 @@ Optionally, install [React developer tools](https://chrome.google.com/webstore/d
 for additional React debugging support in Chrome dev tools under the "React" tab.
 
 ## Usage
+
+React is an external dependency required to consume this component!
 
 From the consuming application:
      

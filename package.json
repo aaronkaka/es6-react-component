@@ -1,7 +1,7 @@
 {
   "name": "es6-react-component",
   "version": "7.0.4",
-  "description": "Card component with bundled styling targeting Bootstrap 3, internationalization, and powered by React.",
+  "description": "Card component with i18n and bundled styling targeting Bootstrap 3 - powered by React.",
   "main": "./demo/dist.card-component.js",
   "scripts": {
     "start": "npm run dev",
@@ -14,7 +14,7 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "lint": "eslint ./react_components/**",
     "lint-all": "eslint react_components/** __tests__/** demo/demo-scriptinclude.js",
-    "ci": "npm run test-cov && npm run build && npm run coveralls",
+    "ci": "npm run test-cov && npm run build",
     "release": "node ./npm_scripts/release.js"
   },
   "jest": {
