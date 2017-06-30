@@ -1,6 +1,6 @@
 # ECMAScript 6 React Card Component [![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
 
-![Image](https://cloud.githubusercontent.com/assets/1950683/13100443/594fa604-d4fa-11e5-8042-77dc6b77280a.jpg?raw=true "screenshot")
+![image](https://user-images.githubusercontent.com/1950683/27719111-5628e406-5d1e-11e7-8554-6a09829f01db.png)
 
 ## Goals
 
