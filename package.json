@@ -1,6 +1,6 @@
 {
   "name": "es6-react-component",
-  "version": "7.0.4",
+  "version": "7.0.5",
   "description": "Card component with i18n and bundled styling targeting Bootstrap 3 - powered by React.",
   "main": "./demo/dist.card-component.js",
   "scripts": {
@@ -18,7 +18,9 @@
     "release": "node ./npm_scripts/release.js"
   },
   "jest": {
-    "transform": {".*": "./node_modules/babel-jest"},
+    "transform": {
+      ".*": "./node_modules/babel-jest"
+    },
     "unmockedModulePathPatterns": [
       "react",
       "react-dom",
