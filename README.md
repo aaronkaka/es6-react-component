@@ -18,13 +18,14 @@ reduce complexity and encourage adherence to web standards - add the polyfill if
 ## Toolchain
 
 - [Node.js](http://nodejs.org) v6+
-- [webpack](https://webpack.github.io/) v2
-    - Bundle javascript, styles and icons
-    - Babel 6 transpiles ES6 and JSX
-    - ESLint as configured in .eslintrc
+    - npm is automatically installed with Node
+    - Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
+to manage them
 
-Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
-to manage them.
+- [webpack](https://webpack.github.io/)
+    - Bundles javascript, styles and icons
+    - Babel transpiles ES6 and JSX
+    - ESLint as configured in .eslintrc
 
 ## Polyfill Service
 
