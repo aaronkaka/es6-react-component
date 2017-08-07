@@ -24,8 +24,8 @@ to manage them
 
 - [webpack](https://webpack.github.io/)
     - Bundles javascript, styles and icons
-    - Babel transpiles ES6 and JSX
-    - ESLint as configured in .eslintrc
+    - Babel loader transpiles ES6 and JSX
+    - ESLint loader checks code quality as configured in .eslintrc
 
 ## Polyfill Service
 
@@ -78,10 +78,6 @@ for additional React debugging support in Chrome dev tools under the "React" tab
 ## Usage
 
 React is an external dependency required to consume this component!
-
-From the consuming application:
-     
-    > npm i --save es6-react-component
 
 Eventing example: Include it in the consuming page, then event `cardstrap` with the container type, as in
 
