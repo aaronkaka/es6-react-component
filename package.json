@@ -24,7 +24,6 @@
     "unmockedModulePathPatterns": [
       "react",
       "react-dom",
-      "react-addons-test-utils",
       "enzyme"
     ]
   },
