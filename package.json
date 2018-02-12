@@ -13,7 +13,7 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "lint": "eslint ./react_components/**",
     "lint-all": "eslint react_components/** __tests__/** demo/demo-scriptinclude.js",
-    "ci": "npm run test-cov && npm run build",
+    "ci": "npm test && npm run build",
     "release": "node ./npm_scripts/release.js"
   },
   "jest": {
