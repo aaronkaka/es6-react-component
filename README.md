@@ -86,12 +86,12 @@ Eventing example: Include it in the consuming page, then event `cardstrap` with 
 CommonJS example:
 
     var Cards = require('es6-react-component').default;
-    var cardContainer = new Cards('.container'); // pass in your container element
     
 ES2015 example:
 
-    import Cards from 'es6-react-component';
-    const cardContainer = new Cards('.container');
+    import Cards from 'es6-react-component'
+    
+    new Cards('.container')   // pass in your container element
     
 ### Card Instances
 

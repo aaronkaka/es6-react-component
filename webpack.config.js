@@ -33,9 +33,9 @@ module.exports = {
     }
   ],
    devServer: {
-      host               : "0.0.0.0",
+      host               : '0.0.0.0',
       port               : 8080,
-      publicPath         : "/demo/",
+      publicPath         : '/demo/',
       hot                : true,
       https              : false,
       overlay            : true,
@@ -43,21 +43,21 @@ module.exports = {
       disableHostCheck   : true,
       historyApiFallback : true,
       watchOptions       : { poll: true },
-      contentBase        : path.join(__dirname, "demo")
+      contentBase        : path.join(__dirname, 'demo')
     },
   module: {
     rules: [
       {
         test: /\.js$/,
-        enforce: "pre",
+        enforce: 'pre',
         loader: 'eslint-loader',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
-          "css-loader"
+          'style-loader',
+          'css-loader'
         ], // CSS is turned into JavaScript with css loader, then embedded as styles using style loader
         exclude: /node_modules/
       },
@@ -66,7 +66,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           babelrc: false,
-          presets: ["react", ["es2015", {modules: false}]]
+          presets: ['react', ['es2015', {modules: false}]]
         },
         exclude: /node_modules/
       },

@@ -12,7 +12,7 @@
     "build": "webpack -p",
     "coveralls": "coveralls < coverage/lcov.info",
     "lint": "eslint ./react_components/**",
-    "lint-all": "eslint react_components/** __tests__/** demo/demo-scriptinclude.js",
+    "lint-all": "eslint react_components/** __tests__/** demo/demo.js npm_scripts/**",
     "ci": "npm test && npm run build",
     "release": "node ./npm_scripts/release.js"
   },
