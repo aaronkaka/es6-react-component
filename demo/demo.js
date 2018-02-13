@@ -10,9 +10,8 @@ function init() {
   // Un-hide the page elements now that the DOM has fully rendered
   foucTarget && (foucTarget.className = '');
 
-  // Add the card container listeners
-  const cardContainer = new Cards('.container');
-  console.info(cardContainer.toString());
+  // Instantiate the card container listeners
+  new Cards('.container');
 
   // Listen for any events coming out of evented components
   eventedElement.addEventListener('card-comment', function(e) {
